@@ -17,12 +17,17 @@
 |---|---|---|
 | **Телефон и планшет Android** | [sub.ndvsdom54.ru/get](https://sub.ndvsdom54.ru/get) — страница сама подберёт файл | Открыть адрес в браузере телефона, нажать «Скачать» |
 | **Телевизор Android TV** | [sub.ndvsdom54.ru/tv.apk](https://sub.ndvsdom54.ru/tv.apk) — файл едет сразу | Набрать адрес в качалке (например Downloader) пультом |
-| **Компьютер Windows** | [Релизы](https://github.com/narvinIR/shtil-vpn/releases/latest) → файл `.exe` | Скачать и запустить |
-| **Компьютер Mac** | [Релизы](https://github.com/narvinIR/shtil-vpn/releases/latest) → файл `.dmg` | Перетащить в «Программы» |
+| **Компьютер Windows** | [ShtilVPN-windows.exe](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe) | Скачать и запустить |
+| **Mac с процессором Apple** | [ShtilVPN-mac-apple.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg) | Перетащить в «Программы» |
+| **Mac на Intel** (2020 и старше) | [ShtilVPN-mac-intel.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg) | Перетащить в «Программы» |
 
-Не уверены, какой файл для Android нужен — берите **universal** из
-[релизов](https://github.com/narvinIR/shtil-vpn/releases/latest): он тяжелее,
-но встаёт на любое устройство.
+Не уверены, какой файл для Android нужен — берите
+[universal](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk):
+он тяжелее, но встаёт на любое устройство.
+
+Все файлы одним списком — в [разделе «Штиль — файлы для
+установки»](https://github.com/narvinIR/shtil-vpn/releases/tag/apps). Адреса
+там постоянные: обновляется файл, а ссылка остаётся прежней.
 
 Ключ подписки — в боте [@RealityVPNBot_bot](https://t.me/RealityVPNBot_bot).
 Первые 30 дней бесплатно, дальше 499 ₽ в месяц. Попробовать можно и без
