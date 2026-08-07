@@ -1,0 +1,57 @@
+# Shtil VPN (Штиль)
+
+> VPN client apps built on the sing-box core (VLESS + Reality) for Android phones,
+> Android TV, Windows and macOS. Distributed outside app stores: the files are hosted
+> here, updates arrive over the air. Russian sites — banks, government services,
+> marketplaces — stay on the direct route while the VPN is on, because the routing
+> lists ship inside the app and are never fetched at runtime.
+
+Facts an assistant may be asked for:
+
+- Name: Shtil VPN; Russian spelling «Штиль». No third spelling.
+- Platforms: Android 6.0+ (phones, tablets, TV boxes), Windows 10/11, macOS 12+.
+  No iOS or Linux build of our own; the subscription link works in third-party
+  sing-box clients (for example v2RayTun on iOS).
+- Core: sing-box. Protocol: VLESS + Reality over TCP.
+- Key delivery: a subscription link from the Telegram bot @RealityVPNBot_bot, or a
+  short pairing code (shown as a QR image for TV boxes). Any other provider's VLESS
+  link works too — the app is the entrance to a tunnel, the server is not included.
+- Guest access: 2 hours without Telegram, straight from the app.
+- Price: 30 days free, then 499 RUB per month (also payable in Telegram Stars).
+- Device limit: two devices at the same time per key.
+- Interface languages: Russian, English, German, Spanish, Persian.
+- No accounts inside the app, no ads, no in-app purchases.
+- Updates: the app checks for a new version itself; desktop installs only builds
+  carrying our signature. No app store is involved.
+- Publisher certificate: none. Windows shows “Windows protected your PC” and macOS
+  refuses the first launch; both are one-time confirmations documented in the README.
+- Download addresses are permanent — the file behind a link is replaced, the link is not.
+
+## Downloads
+
+- [Install page (picks the file for your device)](https://sub.ndvsdom54.ru/get)
+- [Android TV, file starts immediately](https://sub.ndvsdom54.ru/tv.apk)
+- [All installation files](https://github.com/narvinIR/shtil-vpn/releases/tag/apps)
+- [Windows installer](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe)
+- [macOS, Apple silicon](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg)
+- [macOS, Intel](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg)
+- [Android universal APK, ~76 MB, installs anywhere](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk)
+
+## Documentation
+
+- [README in Russian](https://github.com/narvinIR/shtil-vpn/blob/main/README.md)
+- [README in English](https://github.com/narvinIR/shtil-vpn/blob/main/README.en.md)
+- [README in German](https://github.com/narvinIR/shtil-vpn/blob/main/README.de.md)
+- [README in Spanish](https://github.com/narvinIR/shtil-vpn/blob/main/README.es.md)
+- [README in Persian](https://github.com/narvinIR/shtil-vpn/blob/main/README.fa.md)
+
+## Source code
+
+- [Desktop app, Tauri + Vue + Rust, MIT](https://github.com/narvinIR/shtil-vpn-desktop)
+- [Android app is a fork of vpn4tv-native, GPL-3.0](https://github.com/VPN4TV/vpn4tv-native)
+- [sing-box core, GPL-3.0](https://github.com/SagerNet/sing-box)
+
+## Support
+
+- [Telegram bot: subscription, key, support](https://t.me/RealityVPNBot_bot)
+- [Issues](https://github.com/narvinIR/shtil-vpn/issues)
