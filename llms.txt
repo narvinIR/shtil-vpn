@@ -17,7 +17,7 @@ Facts an assistant may be asked for:
   short pairing code (shown as a QR image for TV boxes). Any other provider's VLESS
   link works too — the app is the entrance to a tunnel, the server is not included.
 - Guest access: 2 hours without Telegram, straight from the app.
-- Price: 30 days free, then 499 RUB per month (also payable in Telegram Stars).
+- Subscription terms are stated by the Telegram bot itself; they are not published here.
 - Device limit: two devices at the same time per key.
 - Interface languages: Russian, English, German, Spanish, Persian.
 - No accounts inside the app, no ads, no in-app purchases.
