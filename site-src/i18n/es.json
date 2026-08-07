@@ -1,0 +1,182 @@
+{
+  "brand": "Shtil VPN",
+  "meta": {
+    "title": "Shtil VPN — cliente sing-box para Android, TV, Windows y macOS",
+    "description": "Aplicación VPN sobre el núcleo sing-box (VLESS + Reality) para teléfonos Android, Android TV, Windows y macOS. Los sitios rusos siguen por la ruta directa, la clave llega de un bot de Telegram y las actualizaciones vienen por el aire.",
+    "langs": "Idioma de la página"
+  },
+  "hero": {
+    "h1": "Una conexión tranquila",
+    "lead": "La aplicación abre un túnel cifrado hasta nuestro servidor, mientras los bancos, los servicios públicos y las tiendas siguen cargando directamente: mantienen su velocidad y siguen viéndole desde Rusia.",
+    "download": {
+      "android": "Descargar para Android",
+      "tv": "Descargar para televisor",
+      "windows": "Descargar para Windows",
+      "mac": "Descargar para Mac",
+      "macintel": "Descargar para Mac (Intel)",
+      "ios": "Abrir el bot — clave para iPhone"
+    },
+    "other": "Otro dispositivo —",
+    "other_link": "la lista completa de archivos",
+    "badges": [
+      "Android 6.0 y superior",
+      "Android TV — con mando",
+      "Windows 10 y 11",
+      "macOS 12 y superior",
+      "Cinco idiomas"
+    ]
+  },
+  "split": {
+    "h2": "Los sitios rusos pasan por fuera del túnel",
+    "lead": "Una VPN corriente mete todo el tráfico en el túnel, y entonces el banco empieza a tratarle como visitante extranjero. Aquí la ruta se bifurca en el propio dispositivo.",
+    "list": [
+      "Las listas de dominios y rangos rusos viven dentro de la aplicación y nunca se descargan: un servidor de reglas remoto puede ser inalcanzable desde Rusia, y entonces la VPN ni siquiera arrancaría.",
+      "Para los dominios de ruta directa solo se responden direcciones IPv4; de otro modo el dispositivo seguiría un registro AAAA por fuera de la ruta y el sitio seguiría sin abrirse.",
+      "Puede enviar por el túnel solo los programas que elija y dejar el resto como estaba.",
+      "Nada se descarga sobre la marcha: se enciende y funciona, incluso si direcciones ajenas están caídas."
+    ],
+    "schema": {
+      "alt": "Esquema: parte del tráfico va por nuestro servidor y los sitios rusos van directos",
+      "device": "Su dispositivo",
+      "server": "Nuestro servidor",
+      "direct": "Sitios rusos",
+      "tunnel_label": "túnel cifrado",
+      "direct_label": "directo, como sin VPN"
+    }
+  },
+  "shots": {
+    "h2": "Cómo se ve",
+    "captions": [
+      "Teléfono: conectado, con el servidor y el consumo a la vista",
+      "Televisor: la misma aplicación, pensada para el mando",
+      "Ordenador: Windows y macOS"
+    ]
+  },
+  "steps": {
+    "h2": "Tres pasos",
+    "lead": "De la descarga a la conexión funcionando pasan unos minutos y no hay que registrarse.",
+    "items": [
+      {
+        "title": "Instalar la aplicación",
+        "text": "El archivo sale de aquí; no hacen falta Google Play ni la App Store. Cada sistema pregunta una vez: lo que dice exactamente está más abajo."
+      },
+      {
+        "title": "Probar o añadir la clave",
+        "text": "La aplicación tiene el botón «Probar ahora»: dos horas sin Telegram y sin correo. La clave permanente la da el bot como enlace o código corto, y el televisor lee ese código de la pantalla del teléfono."
+      },
+      {
+        "title": "Pulsar «Conectar»",
+        "text": "Una misma clave sirve a la vez para el teléfono, el televisor y el ordenador. Si la clave cambia en el servidor, cada dispositivo toma la nueva por su cuenta."
+      }
+    ]
+  },
+  "price": {
+    "h2": "Cuánto cuesta",
+    "lead": "La suscripción la entrega y la renueva el bot, y también es él quien cobra: en esta página no recogemos nada.",
+    "items": [
+      {
+        "amount": "30 días",
+        "per": "primer mes",
+        "note": "Gratis, una vez por cuenta. Además, dos horas como invitado: sin Telegram, desde la propia aplicación.",
+        "free": true
+      },
+      {
+        "amount": "499 ₽",
+        "per": "al mes",
+        "note": "Con tarjeta de un banco ruso, a través de YooMoney."
+      },
+      {
+        "amount": "600 ⭐",
+        "per": "al mes",
+        "note": "Estrellas de Telegram, para quien no tiene tarjeta rusa. En conversión son unos 6 dólares; no tenemos caja en dólares, las estrellas se compran dentro de Telegram."
+      }
+    ]
+  },
+  "install": {
+    "h2": "Qué dirá el sistema al instalar",
+    "lead": "Las aplicaciones se reparten fuera de las tiendas, así que cada sistema pregunta una vez, igual que con cualquier programa ajeno a su tienda.",
+    "items": [
+      {
+        "system": "Android",
+        "text": "«Instalación desde este origen no permitida»: permita al navegador instalar aplicaciones. Después Google puede mostrar una pantalla roja; allí necesita «Instalar de todos modos»."
+      },
+      {
+        "system": "Android TV",
+        "text": "La misma pantalla roja de Google; el botón de confirmación está abajo y se alcanza con el mando. Escriba la dirección corta en una app descargadora y el archivo empieza enseguida."
+      },
+      {
+        "system": "Windows",
+        "text": "Ventana azul «Windows protegió su PC» → «Más información» → «Ejecutar de todas formas». No hemos comprado certificado de editor: desde 2024 la confianza inmediata no se vende, se gana con el número de instalaciones."
+      },
+      {
+        "system": "macOS",
+        "text": "El primer arranque se rechaza: Ajustes del Sistema → Privacidad y seguridad → «Abrir igualmente» y la contraseña de administrador. Después la aplicación se abre con doble clic."
+      }
+    ]
+  },
+  "inside": {
+    "h2": "Qué hay dentro",
+    "items": [
+      {
+        "title": "El núcleo sing-box",
+        "text": "VLESS + Reality sobre TCP. El núcleo es de código abierto y viaja dentro de la aplicación: para el primer arranque no hace falta internet."
+      },
+      {
+        "title": "Un enlace de suscripción, no una clave larga",
+        "text": "La configuración llega lista y se refresca sola. Si la clave cambia en el servidor, no hay que enviar nada a nadie."
+      },
+      {
+        "title": "Actualización por el aire",
+        "text": "La aplicación encuentra la versión nueva por su cuenta y la ofrece. En el ordenador solo se instala lo que lleva nuestra firma."
+      },
+      {
+        "title": "Nada de más",
+        "text": "Sin cuentas dentro de la app, sin publicidad y sin compras integradas. La suscripción y el pago viven en el bot."
+      }
+    ]
+  },
+  "faq": {
+    "h2": "Preguntas",
+    "items": [
+      {
+        "q": "¿Hacen falta Google Play o la App Store?",
+        "a": "No. El archivo se descarga desde aquí y la aplicación encuentra sola las versiones nuevas."
+      },
+      {
+        "q": "¿Cómo instalo en un televisor sin navegador?",
+        "a": "Con una app descargadora tipo Downloader: escriba sub.ndvsdom54.ru/tv.apk con el mando y el archivo empieza enseguida. La dirección es corta a propósito y no lleva «https://»."
+      },
+      {
+        "q": "¿Por qué los bancos y los servicios públicos suelen fallar con una VPN?",
+        "a": "Porque su tráfico pasa por el túnel y el sitio ve una dirección extranjera. Aquí esos sitios se quedan en la ruta directa y la lista viaja dentro de la aplicación."
+      },
+      {
+        "q": "¿Sirve una clave de otro proveedor?",
+        "a": "Sí, si es un enlace de suscripción o una clave en formato VLESS. La aplicación es la entrada al túnel; el servidor no va incluido."
+      },
+      {
+        "q": "¿Cuántos dispositivos por clave?",
+        "a": "Dos a la vez. Un enlace de suscripción cubre teléfono, televisor y ordenador."
+      },
+      {
+        "q": "¿Hay versión para iPhone o Linux?",
+        "a": "Propia no. El enlace de suscripción funciona en clientes de terceros, como v2RayTun en iPhone o cualquier cliente basado en sing-box."
+      },
+      {
+        "q": "¿Qué pasa con los registros y las cuentas?",
+        "a": "Dentro de la aplicación no hay cuentas, ni publicidad, ni compras integradas. Para la suscripción el bot solo conoce su cuenta de Telegram y la fecha pagada."
+      }
+    ]
+  },
+  "last": {
+    "h2": "Instalar y probar",
+    "lead": "El archivo sale de aquí y la prueba se activa dentro de la propia aplicación: para eso no hace falta Telegram."
+  },
+  "footer": {
+    "apps_title": "Archivos",
+    "apps": "Todos los archivos de instalación",
+    "source_title": "Código fuente",
+    "contact_title": "Soporte y claves",
+    "note": "La aplicación de Android es un fork de vpn4tv-native (GPL-3.0), la de ordenador es de código abierto (MIT) y el núcleo sing-box está bajo GPL-3.0."
+  }
+}

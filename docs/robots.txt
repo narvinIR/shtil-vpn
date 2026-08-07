@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shtil.ndvsdom54.ru/sitemap.xml

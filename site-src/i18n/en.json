@@ -1,0 +1,182 @@
+{
+  "brand": "Shtil VPN",
+  "meta": {
+    "title": "Shtil VPN — sing-box client for Android, TV, Windows and macOS",
+    "description": "A VPN app on the sing-box core (VLESS + Reality) for Android phones, Android TV, Windows and macOS. Russian sites keep the direct route, the key comes from a Telegram bot, updates arrive over the air.",
+    "langs": "Page language"
+  },
+  "hero": {
+    "h1": "A calm connection",
+    "lead": "The app opens an encrypted tunnel to our server, while banks, government services and marketplaces keep loading directly — they stay fast and still see you from Russia.",
+    "download": {
+      "android": "Download for Android",
+      "tv": "Download for TV",
+      "windows": "Download for Windows",
+      "mac": "Download for Mac",
+      "macintel": "Download for Mac (Intel)",
+      "ios": "Open the bot — key for iPhone"
+    },
+    "other": "Another device —",
+    "other_link": "the full list of files",
+    "badges": [
+      "Android 6.0+",
+      "Android TV — remote friendly",
+      "Windows 10 and 11",
+      "macOS 12+",
+      "Five languages"
+    ]
+  },
+  "split": {
+    "h2": "Russian sites bypass the tunnel",
+    "lead": "An ordinary VPN pushes every packet through the tunnel — and the bank starts treating you as a foreign visitor. Here the route forks on the device itself.",
+    "list": [
+      "The lists of Russian domains and address ranges live inside the app and are never downloaded: a remote rule-set server can be unreachable from Russia, and then the VPN would refuse to start at all.",
+      "For domains on the direct route only IPv4 answers are returned — otherwise the device would follow an AAAA record past the route and the site still would not open.",
+      "Per-app routing: send only the apps you choose through the tunnel and leave the rest as they were.",
+      "Nothing is fetched at runtime: you switch it on and it works, even when third-party addresses are down."
+    ],
+    "schema": {
+      "alt": "Diagram: part of the traffic goes through our server, Russian sites go directly",
+      "device": "Your device",
+      "server": "Our server",
+      "direct": "Russian sites",
+      "tunnel_label": "encrypted tunnel",
+      "direct_label": "direct, as without a VPN"
+    }
+  },
+  "shots": {
+    "h2": "How it looks",
+    "captions": [
+      "Phone: connected, server and traffic in view",
+      "TV: the same app, built for a remote",
+      "Desktop: Windows and macOS"
+    ]
+  },
+  "steps": {
+    "h2": "Three steps",
+    "lead": "From download to a working connection is a few minutes, and no sign-up is involved.",
+    "items": [
+      {
+        "title": "Install the app",
+        "text": "The file comes from here; Google Play and the App Store are not needed. Each system asks once — what exactly it says is written below."
+      },
+      {
+        "title": "Try it, or add a key",
+        "text": "The app has a “Try now” button — two hours with no Telegram and no email. A permanent key comes from the bot as a link or a short code, and a TV reads that code from your phone screen."
+      },
+      {
+        "title": "Press “Connect”",
+        "text": "One key works on the phone, the TV and the computer at once. When the key changes on the server, every device picks up the new one by itself."
+      }
+    ]
+  },
+  "price": {
+    "h2": "What it costs",
+    "lead": "The bot issues and renews the subscription, and it also takes the payment — we collect nothing on this page.",
+    "items": [
+      {
+        "amount": "30 days",
+        "per": "first month",
+        "note": "Free, once per account. Plus two hours as a guest — no Telegram, straight from the app.",
+        "free": true
+      },
+      {
+        "amount": "499 ₽",
+        "per": "per month",
+        "note": "With a Russian bank card, through YooMoney."
+      },
+      {
+        "amount": "600 ⭐",
+        "per": "per month",
+        "note": "Telegram Stars — for people without a Russian card. That is roughly 6 US dollars; we have no dollar checkout, the stars are bought inside Telegram."
+      }
+    ]
+  },
+  "install": {
+    "h2": "What the system says during installation",
+    "lead": "The apps are distributed outside the stores, so each system asks once. That is how it greets any program that did not come from its own store.",
+    "items": [
+      {
+        "system": "Android",
+        "text": "“Installing from this source is not allowed” — let the browser install apps. Google may then show a red screen; the button you need there says “Install anyway”."
+      },
+      {
+        "system": "Android TV",
+        "text": "The same red Google screen; the confirm button sits at the bottom and is reached with the remote. Type the short address into a downloader app and the file starts right away."
+      },
+      {
+        "system": "Windows",
+        "text": "A blue “Windows protected your PC” box → “More info” → “Run anyway”. We did not buy a publisher certificate: since 2024 instant trust is not for sale, reputation is earned through install count."
+      },
+      {
+        "system": "macOS",
+        "text": "The first launch is refused: System Settings → Privacy & Security → “Open Anyway” and the administrator password. After that the app opens with a double click."
+      }
+    ]
+  },
+  "inside": {
+    "h2": "Under the hood",
+    "items": [
+      {
+        "title": "The sing-box core",
+        "text": "VLESS + Reality over TCP. The core is open source and ships inside the app — no internet is needed for the first launch."
+      },
+      {
+        "title": "A subscription link, not a long key",
+        "text": "The configuration arrives ready and refreshes itself. When the key changes on the server, nothing has to be mailed out to people."
+      },
+      {
+        "title": "Over-the-air updates",
+        "text": "The app finds a new version itself and offers to install it. On desktop only builds carrying our signature are installed."
+      },
+      {
+        "title": "Nothing extra",
+        "text": "No accounts inside the app, no ads, no in-app purchases. The subscription and the payment live in the bot."
+      }
+    ]
+  },
+  "faq": {
+    "h2": "Questions",
+    "items": [
+      {
+        "q": "Do I need Google Play or the App Store?",
+        "a": "No. The file is downloaded from here, and the app finds new versions on its own."
+      },
+      {
+        "q": "How do I install it on a TV with no browser?",
+        "a": "Use a downloader app such as Downloader: type sub.ndvsdom54.ru/tv.apk with the remote and the file starts immediately. The address is deliberately short and has no “https://”."
+      },
+      {
+        "q": "Why do banking and government sites usually break under a VPN?",
+        "a": "Because their traffic goes through the tunnel and the site sees a foreign address. Here those sites stay on the direct route, and the rule list travels inside the app."
+      },
+      {
+        "q": "Can I use a key from another provider?",
+        "a": "Yes, if it is a subscription link or a key in VLESS format. The app is the entrance to a tunnel; the server itself is not included."
+      },
+      {
+        "q": "How many devices per key?",
+        "a": "Two at the same time. One subscription link covers the phone, the TV and the computer."
+      },
+      {
+        "q": "Is there a build for iPhone or Linux?",
+        "a": "Not of our own. The subscription link works in third-party clients — v2RayTun on iPhone, or any client built on the sing-box core."
+      },
+      {
+        "q": "What about logs and accounts?",
+        "a": "There are no accounts inside the app, no ads and no in-app purchases. For the subscription the bot knows only your Telegram account and the paid-until date."
+      }
+    ]
+  },
+  "last": {
+    "h2": "Install it and try",
+    "lead": "The file comes from here, and the trial starts inside the app itself — Telegram is not needed for that."
+  },
+  "footer": {
+    "apps_title": "Files",
+    "apps": "All installation files",
+    "source_title": "Source code",
+    "contact_title": "Support and keys",
+    "note": "The Android app is a fork of vpn4tv-native (GPL-3.0), the desktop app is open source (MIT), the sing-box core is GPL-3.0."
+  }
+}

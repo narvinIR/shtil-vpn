@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Штиль VPN — приложение для телефона, телевизора и компьютера</title>
+<meta name="description" content="Своё VPN-приложение на ядре sing-box (VLESS + Reality) для Android, Android TV, Windows и macOS. Российские сайты открываются напрямую, ключ приходит из Telegram-бота, обновления — по воздуху.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/">
+  <link rel="alternate" hreflang="de" href="https://shtil.ndvsdom54.ru/de/">
+  <link rel="alternate" hreflang="es" href="https://shtil.ndvsdom54.ru/es/">
+  <link rel="alternate" hreflang="fa" href="https://shtil.ndvsdom54.ru/fa/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Штиль VPN — приложение для телефона, телевизора и компьютера">
+<meta property="og:description" content="Своё VPN-приложение на ядре sing-box (VLESS + Reality) для Android, Android TV, Windows и macOS. Российские сайты открываются напрямую, ключ приходит из Telegram-бота, обновления — по воздуху.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Shtil VPN", "alternateName": "Штиль VPN", "applicationCategory": "SecurityApplication", "operatingSystem": "Android 6.0+, Android TV, Windows 10/11, macOS 12+", "url": "https://shtil.ndvsdom54.ru/", "downloadUrl": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "installUrl": "https://sub.ndvsdom54.ru/get", "softwareHelp": "https://t.me/RealityVPNBot_bot", "inLanguage": ["ru", "en", "de", "es", "fa"], "description": "Своё VPN-приложение на ядре sing-box (VLESS + Reality) для Android, Android TV, Windows и macOS. Российские сайты открываются напрямую, ключ приходит из Telegram-бота, обновления — по воздуху.", "offers": [{"@type": "Offer", "price": "499", "priceCurrency": "RUB", "category": "subscription", "url": "https://t.me/RealityVPNBot_bot", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "price": "600", "priceCurrency": "XTR", "category": "subscription", "url": "https://t.me/RealityVPNBot_bot", "availability": "https://schema.org/InStock"}], "featureList": ["Ядро sing-box", "Ссылка-подписка вместо длинного ключа", "Обновления по воздуху", "Ничего лишнего"], "screenshot": ["https://shtil.ndvsdom54.ru/assets/shots/phone.png", "https://shtil.ndvsdom54.ru/assets/shots/tv.png", "https://shtil.ndvsdom54.ru/assets/shots/desktop.png"], "isBasedOn": "https://github.com/SagerNet/sing-box", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Нужен ли Google Play или App Store?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Файл скачивается отсюда, а новые версии приложение находит само."}}, {"@type": "Question", "name": "Как поставить на телевизор, если браузера там нет?", "acceptedAnswer": {"@type": "Answer", "text": "Через качалку вроде Downloader: наберите пультом sub.ndvsdom54.ru/tv.apk — файл поедет сразу. Адрес специально короткий и без «https://»."}}, {"@type": "Question", "name": "Почему банк и госуслуги обычно ломаются под VPN?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что их трафик уходит в туннель и сайт видит иностранный адрес. Здесь такие сайты остаются на прямом маршруте, а список едет внутри приложения."}}, {"@type": "Question", "name": "Подойдёт ли ключ другого поставщика?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если это ссылка-подписка или ключ в формате VLESS. Приложение — вход в туннель, сервер в него не входит."}}, {"@type": "Question", "name": "Сколько устройств на один ключ?", "acceptedAnswer": {"@type": "Answer", "text": "Два одновременно. Ссылка-подписка одна на все — телефон, телевизор и компьютер."}}, {"@type": "Question", "name": "Есть ли версия для iPhone или Linux?", "acceptedAnswer": {"@type": "Answer", "text": "Своей нет. Ссылка-подписка работает в сторонних клиентах — например в v2RayTun на iPhone или в любом клиенте на ядре sing-box."}}, {"@type": "Question", "name": "Что с журналами и учётными записями?", "acceptedAnswer": {"@type": "Answer", "text": "Внутри приложения нет ни учётных записей, ни рекламы, ни встроенных покупок. Для подписки бот знает только ваш Telegram и срок оплаты."}}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Штиль VPN</b>
+  </a>
+  <nav class="langs" aria-label="Язык страницы">
+      <a href="https://shtil.ndvsdom54.ru/" class="on" hreflang="ru">Русский</a>
+      <a href="https://shtil.ndvsdom54.ru/en/" hreflang="en">English</a>
+      <a href="https://shtil.ndvsdom54.ru/de/" hreflang="de">Deutsch</a>
+      <a href="https://shtil.ndvsdom54.ru/es/" hreflang="es">Español</a>
+      <a href="https://shtil.ndvsdom54.ru/fa/" hreflang="fa">فارسی</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <img class="mark" src="assets/shtil-icon.svg" alt="" width="124" height="124">
+    <h1>Спокойное подключение</h1>
+    <p class="lead">Приложение поднимает зашифрованный туннель до нашего сервера, а банки, госуслуги и маркетплейсы продолжают открываться напрямую — их скорость не падает, и они по-прежнему видят вас из России.</p>
+    <p class="cta">
+      <a class="btn" data-download data-files='{"android": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "tv": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm32.apk", "windows": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe", "mac": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg", "macintel": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg", "universal": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk", "ios": "https://t.me/RealityVPNBot_bot"}' data-labels='{"android": "Скачать для Android", "tv": "Скачать для телевизора", "windows": "Скачать для Windows", "mac": "Скачать для Mac", "macintel": "Скачать для Mac (Intel)", "ios": "Открыть бота — ключ для iPhone"}'
+         href="https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk">Скачать для Android</a>
+      <span class="sub">Другое устройство — <a href="#platforms">весь список файлов</a></span>
+    </p>
+    <p class="badges">
+        <span>Android 6.0 и новее</span>
+        <span>Android TV — под пульт</span>
+        <span>Windows 10 и 11</span>
+        <span>macOS 12 и новее</span>
+        <span>Пять языков</span>
+    </p>
+  </section>
+
+  <section class="wrap" id="routing">
+    <div class="section-head">
+      <h2>Российские сайты идут мимо туннеля</h2>
+      <p>Обычный VPN уводит в туннель весь трафик — и банк начинает считать вас иностранцем. Здесь маршрут раздваивается прямо на устройстве.</p>
+    </div>
+    <div class="split">
+      <svg viewBox="0 0 566 300" role="img" aria-label="Схема: часть трафика идёт через наш сервер, российские сайты — напрямую" class="routes">
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4F92FF"/><stop offset="1" stop-color="#7FB2FF"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M178 138 C 254 138, 272 76, 344 76" stroke="url(#line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M178 162 C 254 162, 272 224, 344 224" stroke="#46D189" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <rect x="6" y="114" width="172" height="72" rx="18" fill="rgba(79,146,255,.14)" stroke="#4F92FF" stroke-width="1.5"/>
+  <text x="92" y="156" text-anchor="middle" fill="currentColor" font-size="17">Ваше устройство</text>
+
+  <rect x="344" y="36" width="216" height="80" rx="18" fill="rgba(79,146,255,.14)" stroke="#4F92FF" stroke-width="1.5"/>
+  <text x="452" y="70" text-anchor="middle" fill="currentColor" font-size="17">Наш сервер</text>
+  <text x="452" y="94" text-anchor="middle" fill="currentColor" opacity=".62" font-size="13">зашифрованный туннель</text>
+
+  <rect x="344" y="184" width="216" height="80" rx="18" fill="rgba(70,209,137,.12)" stroke="#46D189" stroke-width="1.5"/>
+  <text x="452" y="218" text-anchor="middle" fill="currentColor" font-size="17">Российские сайты</text>
+  <text x="452" y="242" text-anchor="middle" fill="currentColor" opacity=".62" font-size="13">напрямую, как без VPN</text>
+</svg>
+      <div>
+        <ul>
+          <li>Списки российских доменов и адресов лежат внутри приложения и никуда не ходят: сервер со списками бывает недоступен из России, и тогда VPN просто не включился бы.</li>
+          <li>По доменам, которые идут напрямую, отдаётся только адрес IPv4 — иначе устройство ушло бы в обход маршрута и сайт всё равно не открылся бы.</li>
+          <li>Можно пустить через туннель только выбранные программы, остальное оставить как было.</li>
+          <li>Ничего не скачивается на ходу: включили — работает, даже если посторонние адреса недоступны.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="screens">
+    <div class="section-head"><h2>Как это выглядит</h2></div>
+    <div class="shots">
+        <figure class="shot"><img src="assets/shots/phone.png" alt="Телефон: подключено, виден сервер и расход" loading="lazy" width="288" height="640"><span>Телефон: подключено, виден сервер и расход</span></figure>
+        <figure class="shot"><img src="assets/shots/tv.png" alt="Телевизор: то же приложение под пульт" loading="lazy" width="1000" height="562"><span>Телевизор: то же приложение под пульт</span></figure>
+        <figure class="shot"><img src="assets/shots/desktop.png" alt="Компьютер: Windows и macOS" loading="lazy" width="1000" height="700"><span>Компьютер: Windows и macOS</span></figure>
+    </div>
+  </section>
+
+  <section class="wrap" id="start">
+    <div class="section-head">
+      <h2>Три шага</h2>
+      <p>От скачивания до рабочего подключения — несколько минут, регистрация не нужна.</p>
+    </div>
+    <div class="grid three">
+        <article class="card"><span class="num">1</span><h3>Поставить приложение</h3><p>Файл берётся отсюда, магазины Google и Apple не нужны. Каждая система один раз переспросит — что именно она скажет, написано ниже.</p></article>
+        <article class="card"><span class="num">2</span><h3>Попробовать или добавить ключ</h3><p>В приложении есть кнопка «Попробовать сейчас» — два часа без Telegram и без почты. Постоянный ключ выдаёт бот: ссылкой или коротким кодом, телевизор считывает его с экрана телефона.</p></article>
+        <article class="card"><span class="num">3</span><h3>Нажать «Подключить»</h3><p>Один ключ работает сразу на телефоне, телевизоре и компьютере. Ключ на сервере поменялся — устройства подхватят новый сами.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="price">
+    <div class="section-head">
+      <h2>Сколько стоит</h2>
+      <p>Подписку выдаёт и продлевает бот. Он же принимает оплату — на странице мы её не собираем.</p>
+    </div>
+    <div class="grid three">
+        <article class="card price free"><div class="amount">30 дней</div><div class="per">первый месяц</div><p class="note">Бесплатно, один раз на аккаунт. Плюс два часа гостем — без Telegram, прямо из приложения.</p></article>
+        <article class="card price"><div class="amount">499 ₽</div><div class="per">в месяц</div><p class="note">Картой российского банка, через ЮMoney.</p></article>
+        <article class="card price"><div class="amount">600 ⭐</div><div class="per">в месяц</div><p class="note">Звёздами Telegram — для тех, у кого нет рублёвой карты. В пересчёте это около 6 долларов; долларовой оплаты у нас нет, звёзды покупаются внутри Telegram.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="platforms">
+    <div class="section-head">
+      <h2>Что скажет система при установке</h2>
+      <p>Приложения раздаются мимо магазинов, поэтому каждая система один раз переспрашивает. Так она встречает любую программу не из своего магазина.</p>
+    </div>
+    <table>
+      <tbody>
+        <tr><th>Android</th><td>«Установка из этого источника запрещена» — разрешите браузеру ставить приложения. Дальше Google может показать красный экран, там нужна кнопка «Всё равно установить».</td></tr>
+        <tr><th>Android TV</th><td>Тот же красный экран Google; кнопка подтверждения внизу, доводится пультом. Наберите в качалке короткий адрес — файл поедет сразу.</td></tr>
+        <tr><th>Windows</th><td>Синее окно «Windows защитила ваш компьютер» → «Подробнее» → «Выполнить в любом случае». Сертификат издателя мы не покупали: с 2024 года мгновенное доверие не продаётся, репутация набирается числом установок.</td></tr>
+        <tr><th>macOS</th><td>Первый запуск система не разрешит: Системные настройки → Конфиденциальность и безопасность → «Открыть всё равно» и пароль администратора. Дальше приложение открывается двойным щелчком.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="wrap" id="inside">
+    <div class="section-head"><h2>Что внутри</h2></div>
+    <div class="grid two">
+        <article class="card"><h3>Ядро sing-box</h3><p>Протокол VLESS + Reality поверх TCP. Ядро открытое, лежит внутри приложения — интернет для первого запуска не нужен.</p></article>
+        <article class="card"><h3>Ссылка-подписка вместо длинного ключа</h3><p>Настройка приезжает готовой и обновляется сама. Ключ на сервере сменился — рассылать людям ничего не нужно.</p></article>
+        <article class="card"><h3>Обновления по воздуху</h3><p>Приложение само находит новую версию и предлагает поставить. На компьютере ставится только то, что подписано нашим ключом.</p></article>
+        <article class="card"><h3>Ничего лишнего</h3><p>Внутри приложения нет учётных записей, рекламы и встроенных покупок. Подписка и оплата живут в боте.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="faq">
+    <div class="section-head"><h2>Вопросы</h2></div>
+    <div>
+        <details><summary>Нужен ли Google Play или App Store?</summary><p>Нет. Файл скачивается отсюда, а новые версии приложение находит само.</p></details>
+        <details><summary>Как поставить на телевизор, если браузера там нет?</summary><p>Через качалку вроде Downloader: наберите пультом sub.ndvsdom54.ru/tv.apk — файл поедет сразу. Адрес специально короткий и без «https://».</p></details>
+        <details><summary>Почему банк и госуслуги обычно ломаются под VPN?</summary><p>Потому что их трафик уходит в туннель и сайт видит иностранный адрес. Здесь такие сайты остаются на прямом маршруте, а список едет внутри приложения.</p></details>
+        <details><summary>Подойдёт ли ключ другого поставщика?</summary><p>Да, если это ссылка-подписка или ключ в формате VLESS. Приложение — вход в туннель, сервер в него не входит.</p></details>
+        <details><summary>Сколько устройств на один ключ?</summary><p>Два одновременно. Ссылка-подписка одна на все — телефон, телевизор и компьютер.</p></details>
+        <details><summary>Есть ли версия для iPhone или Linux?</summary><p>Своей нет. Ссылка-подписка работает в сторонних клиентах — например в v2RayTun на iPhone или в любом клиенте на ядре sing-box.</p></details>
+        <details><summary>Что с журналами и учётными записями?</summary><p>Внутри приложения нет ни учётных записей, ни рекламы, ни встроенных покупок. Для подписки бот знает только ваш Telegram и срок оплаты.</p></details>
+    </div>
+  </section>
+
+  <section class="wrap last">
+    <h2>Поставить и попробовать</h2>
+    <p>Файл берётся отсюда, пробный доступ включается в самом приложении — Telegram для этого не нужен.</p>
+    <p class="cta">
+      <a class="btn" data-download data-files='{"android": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "tv": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm32.apk", "windows": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe", "mac": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg", "macintel": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg", "universal": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk", "ios": "https://t.me/RealityVPNBot_bot"}' data-labels='{"android": "Скачать для Android", "tv": "Скачать для телевизора", "windows": "Скачать для Windows", "mac": "Скачать для Mac", "macintel": "Скачать для Mac (Intel)", "ios": "Открыть бота — ключ для iPhone"}'
+         href="https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk">Скачать для Android</a>
+      <span class="sub">Другое устройство — <a href="https://github.com/narvinIR/shtil-vpn/releases/tag/apps">весь список файлов</a></span>
+    </p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="grid three">
+    <div>
+      <h3>Файлы</h3>
+      <p><a href="https://github.com/narvinIR/shtil-vpn/releases/tag/apps">Все файлы для установки</a></p>
+    </div>
+    <div>
+      <h3>Исходники</h3>
+      <p><a href="https://github.com/narvinIR/shtil-vpn-desktop">shtil-vpn-desktop</a> · MIT<br>
+      <a href="https://github.com/SagerNet/sing-box">sing-box</a> · GPL-3.0</p>
+    </div>
+    <div>
+      <h3>Поддержка и ключ</h3>
+      <p><a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+    </div>
+  </div>
+  <p>Приложение для Android — форк vpn4tv-native (GPL-3.0), для компьютера — открытый исходник (MIT), ядро sing-box — GPL-3.0.</p>
+</footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

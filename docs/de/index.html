@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shtil VPN — sing-box-Client für Android, TV, Windows und macOS</title>
+<meta name="description" content="VPN-App auf dem sing-box-Kern (VLESS + Reality) für Android-Telefone, Android TV, Windows und macOS. Russische Seiten bleiben auf dem direkten Weg, den Schlüssel gibt ein Telegram-Bot, Updates kommen über die Luft.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/de/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/">
+  <link rel="alternate" hreflang="de" href="https://shtil.ndvsdom54.ru/de/">
+  <link rel="alternate" hreflang="es" href="https://shtil.ndvsdom54.ru/es/">
+  <link rel="alternate" hreflang="fa" href="https://shtil.ndvsdom54.ru/fa/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shtil VPN — sing-box-Client für Android, TV, Windows und macOS">
+<meta property="og:description" content="VPN-App auf dem sing-box-Kern (VLESS + Reality) für Android-Telefone, Android TV, Windows und macOS. Russische Seiten bleiben auf dem direkten Weg, den Schlüssel gibt ein Telegram-Bot, Updates kommen über die Luft.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/de/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="de">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Shtil VPN", "alternateName": "Штиль VPN", "applicationCategory": "SecurityApplication", "operatingSystem": "Android 6.0+, Android TV, Windows 10/11, macOS 12+", "url": "https://shtil.ndvsdom54.ru/de/", "downloadUrl": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "installUrl": "https://sub.ndvsdom54.ru/get", "softwareHelp": "https://t.me/RealityVPNBot_bot", "inLanguage": ["ru", "en", "de", "es", "fa"], "description": "VPN-App auf dem sing-box-Kern (VLESS + Reality) für Android-Telefone, Android TV, Windows und macOS. Russische Seiten bleiben auf dem direkten Weg, den Schlüssel gibt ein Telegram-Bot, Updates kommen über die Luft.", "offers": [{"@type": "Offer", "price": "499", "priceCurrency": "RUB", "category": "subscription", "url": "https://t.me/RealityVPNBot_bot", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "price": "600", "priceCurrency": "XTR", "category": "subscription", "url": "https://t.me/RealityVPNBot_bot", "availability": "https://schema.org/InStock"}], "featureList": ["Der sing-box-Kern", "Abo-Link statt langem Schlüssel", "Updates über die Luft", "Nichts Überflüssiges"], "screenshot": ["https://shtil.ndvsdom54.ru/assets/shots/phone.png", "https://shtil.ndvsdom54.ru/assets/shots/tv.png", "https://shtil.ndvsdom54.ru/assets/shots/desktop.png"], "isBasedOn": "https://github.com/SagerNet/sing-box", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Braucht es Google Play oder den App Store?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Datei kommt von hier, neue Versionen findet die App selbst."}}, {"@type": "Question", "name": "Wie installiere ich auf einem Fernseher ohne Browser?", "acceptedAnswer": {"@type": "Answer", "text": "Über eine Downloader-App: sub.ndvsdom54.ru/tv.apk mit der Fernbedienung eingeben, die Datei startet sofort. Die Adresse ist absichtlich kurz und ohne „https://“."}}, {"@type": "Question", "name": "Warum brechen Bank- und Behördenseiten unter einem VPN meist ab?", "acceptedAnswer": {"@type": "Answer", "text": "Weil ihr Verkehr durch den Tunnel läuft und die Seite eine ausländische Adresse sieht. Hier bleiben diese Seiten auf dem direkten Weg, und die Liste reist in der App mit."}}, {"@type": "Question", "name": "Funktioniert ein Schlüssel eines anderen Anbieters?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wenn es ein Abo-Link oder ein Schlüssel im VLESS-Format ist. Die App ist der Eingang zum Tunnel; der Server gehört nicht dazu."}}, {"@type": "Question", "name": "Wie viele Geräte pro Schlüssel?", "acceptedAnswer": {"@type": "Answer", "text": "Zwei gleichzeitig. Ein Abo-Link deckt Telefon, Fernseher und Rechner ab."}}, {"@type": "Question", "name": "Gibt es eine Version für iPhone oder Linux?", "acceptedAnswer": {"@type": "Answer", "text": "Keine eigene. Der Abo-Link funktioniert in fremden Clients — etwa v2RayTun auf dem iPhone oder jedem Client auf dem sing-box-Kern."}}, {"@type": "Question", "name": "Was ist mit Protokollen und Konten?", "acceptedAnswer": {"@type": "Answer", "text": "In der App gibt es weder Konten noch Werbung noch In-App-Käufe. Für das Abo kennt der Bot nur Ihr Telegram-Konto und das bezahlte Datum."}}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/de/">
+    <img src="../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Sprache der Seite">
+      <a href="https://shtil.ndvsdom54.ru/" hreflang="ru">Русский</a>
+      <a href="https://shtil.ndvsdom54.ru/en/" hreflang="en">English</a>
+      <a href="https://shtil.ndvsdom54.ru/de/" class="on" hreflang="de">Deutsch</a>
+      <a href="https://shtil.ndvsdom54.ru/es/" hreflang="es">Español</a>
+      <a href="https://shtil.ndvsdom54.ru/fa/" hreflang="fa">فارسی</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <img class="mark" src="../assets/shtil-icon.svg" alt="" width="124" height="124">
+    <h1>Eine ruhige Verbindung</h1>
+    <p class="lead">Die App öffnet einen verschlüsselten Tunnel zu unserem Server, während Banken, Behördenportale und Marktplätze weiter direkt laden — sie bleiben schnell und sehen Sie weiterhin aus Russland.</p>
+    <p class="cta">
+      <a class="btn" data-download data-files='{"android": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "tv": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm32.apk", "windows": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe", "mac": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg", "macintel": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg", "universal": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk", "ios": "https://t.me/RealityVPNBot_bot"}' data-labels='{"android": "Für Android laden", "tv": "Für den Fernseher laden", "windows": "Für Windows laden", "mac": "Für Mac laden", "macintel": "Für Mac (Intel) laden", "ios": "Bot öffnen — Schlüssel fürs iPhone"}'
+         href="https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk">Für Android laden</a>
+      <span class="sub">Anderes Gerät — <a href="#platforms">die vollständige Dateiliste</a></span>
+    </p>
+    <p class="badges">
+        <span>Android 6.0 und neuer</span>
+        <span>Android TV — mit Fernbedienung</span>
+        <span>Windows 10 und 11</span>
+        <span>macOS 12 und neuer</span>
+        <span>Fünf Sprachen</span>
+    </p>
+  </section>
+
+  <section class="wrap" id="routing">
+    <div class="section-head">
+      <h2>Russische Seiten gehen am Tunnel vorbei</h2>
+      <p>Ein gewöhnliches VPN schiebt allen Verkehr durch den Tunnel — und die Bank hält Sie plötzlich für einen Besucher aus dem Ausland. Hier teilt sich der Weg direkt auf dem Gerät.</p>
+    </div>
+    <div class="split">
+      <svg viewBox="0 0 566 300" role="img" aria-label="Schema: ein Teil des Verkehrs läuft über unseren Server, russische Seiten laufen direkt" class="routes">
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4F92FF"/><stop offset="1" stop-color="#7FB2FF"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M178 138 C 254 138, 272 76, 344 76" stroke="url(#line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M178 162 C 254 162, 272 224, 344 224" stroke="#46D189" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <rect x="6" y="114" width="172" height="72" rx="18" fill="rgba(79,146,255,.14)" stroke="#4F92FF" stroke-width="1.5"/>
+  <text x="92" y="156" text-anchor="middle" fill="currentColor" font-size="17">Ihr Gerät</text>
+
+  <rect x="344" y="36" width="216" height="80" rx="18" fill="rgba(79,146,255,.14)" stroke="#4F92FF" stroke-width="1.5"/>
+  <text x="452" y="70" text-anchor="middle" fill="currentColor" font-size="17">Unser Server</text>
+  <text x="452" y="94" text-anchor="middle" fill="currentColor" opacity=".62" font-size="13">verschlüsselter Tunnel</text>
+
+  <rect x="344" y="184" width="216" height="80" rx="18" fill="rgba(70,209,137,.12)" stroke="#46D189" stroke-width="1.5"/>
+  <text x="452" y="218" text-anchor="middle" fill="currentColor" font-size="17">Russische Seiten</text>
+  <text x="452" y="242" text-anchor="middle" fill="currentColor" opacity=".62" font-size="13">direkt, wie ohne VPN</text>
+</svg>
+      <div>
+        <ul>
+          <li>Die Listen russischer Domains und Adressbereiche liegen in der App und werden nie geladen: Ein entfernter Regel-Server kann aus Russland unerreichbar sein, und dann würde das VPN gar nicht erst starten.</li>
+          <li>Für Domains auf dem direkten Weg gibt es nur IPv4-Antworten — sonst folgte das Gerät einem AAAA-Eintrag an der Route vorbei und die Seite bliebe trotzdem zu.</li>
+          <li>Sie können nur ausgewählte Programme durch den Tunnel schicken und den Rest lassen, wie er war.</li>
+          <li>Nichts wird unterwegs nachgeladen: eingeschaltet und es läuft, selbst wenn fremde Adressen ausfallen.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="screens">
+    <div class="section-head"><h2>So sieht es aus</h2></div>
+    <div class="shots">
+        <figure class="shot"><img src="../assets/shots/phone.png" alt="Telefon: verbunden, Server und Verbrauch im Blick" loading="lazy" width="288" height="640"><span>Telefon: verbunden, Server und Verbrauch im Blick</span></figure>
+        <figure class="shot"><img src="../assets/shots/tv.png" alt="Fernseher: dieselbe App, für die Fernbedienung gebaut" loading="lazy" width="1000" height="562"><span>Fernseher: dieselbe App, für die Fernbedienung gebaut</span></figure>
+        <figure class="shot"><img src="../assets/shots/desktop.png" alt="Rechner: Windows und macOS" loading="lazy" width="1000" height="700"><span>Rechner: Windows und macOS</span></figure>
+    </div>
+  </section>
+
+  <section class="wrap" id="start">
+    <div class="section-head">
+      <h2>Drei Schritte</h2>
+      <p>Vom Download bis zur laufenden Verbindung sind es ein paar Minuten, eine Anmeldung gibt es nicht.</p>
+    </div>
+    <div class="grid three">
+        <article class="card"><span class="num">1</span><h3>App installieren</h3><p>Die Datei kommt von hier, Google Play und App Store werden nicht gebraucht. Jedes System fragt einmal nach — was es genau sagt, steht weiter unten.</p></article>
+        <article class="card"><span class="num">2</span><h3>Testen oder Schlüssel hinzufügen</h3><p>In der App gibt es „Jetzt testen“ — zwei Stunden ohne Telegram und ohne E-Mail. Den dauerhaften Schlüssel gibt der Bot als Link oder Kurzcode; der Fernseher liest den Code vom Telefonbildschirm.</p></article>
+        <article class="card"><span class="num">3</span><h3>„Verbinden“ drücken</h3><p>Ein Schlüssel gilt gleichzeitig für Telefon, Fernseher und Rechner. Ändert sich der Schlüssel auf dem Server, holen die Geräte den neuen selbst.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="price">
+    <div class="section-head">
+      <h2>Was es kostet</h2>
+      <p>Das Abo vergibt und verlängert der Bot, er nimmt auch die Zahlung entgegen — auf dieser Seite sammeln wir nichts ein.</p>
+    </div>
+    <div class="grid three">
+        <article class="card price free"><div class="amount">30 Tage</div><div class="per">erster Monat</div><p class="note">Kostenlos, einmal pro Konto. Dazu zwei Stunden als Gast — ohne Telegram, direkt aus der App.</p></article>
+        <article class="card price"><div class="amount">499 ₽</div><div class="per">im Monat</div><p class="note">Mit einer russischen Bankkarte über YooMoney.</p></article>
+        <article class="card price"><div class="amount">600 ⭐</div><div class="per">im Monat</div><p class="note">Telegram Stars — für alle ohne russische Karte. Umgerechnet sind das etwa 6 US-Dollar; eine Dollar-Kasse haben wir nicht, die Sterne kauft man in Telegram.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="platforms">
+    <div class="section-head">
+      <h2>Was das System bei der Installation sagt</h2>
+      <p>Die Apps werden außerhalb der Stores verteilt, deshalb fragt jedes System einmal nach — so begrüßt es jedes Programm, das nicht aus seinem Store stammt.</p>
+    </div>
+    <table>
+      <tbody>
+        <tr><th>Android</th><td>„Installation aus dieser Quelle nicht erlaubt“ — dem Browser das Installieren erlauben. Danach zeigt Google eventuell einen roten Hinweis; dort brauchen Sie „Trotzdem installieren“.</td></tr>
+        <tr><th>Android TV</th><td>Derselbe rote Google-Hinweis; die Bestätigung steht unten und wird mit der Fernbedienung erreicht. Kurze Adresse in eine Downloader-App tippen — die Datei startet sofort.</td></tr>
+        <tr><th>Windows</th><td>Blaues Fenster „Der Computer wurde durch Windows geschützt“ → „Weitere Informationen“ → „Trotzdem ausführen“. Ein Herausgeberzertifikat haben wir nicht gekauft: Seit 2024 ist sofortiges Vertrauen nicht mehr käuflich, Ruf entsteht über die Zahl der Installationen.</td></tr>
+        <tr><th>macOS</th><td>Der erste Start wird abgelehnt: Systemeinstellungen → Datenschutz &amp; Sicherheit → „Dennoch öffnen“ und Administratorkennwort. Danach startet die App per Doppelklick.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="wrap" id="inside">
+    <div class="section-head"><h2>Was drinsteckt</h2></div>
+    <div class="grid two">
+        <article class="card"><h3>Der sing-box-Kern</h3><p>VLESS + Reality über TCP. Der Kern ist quelloffen und steckt in der App — für den ersten Start braucht es kein Internet.</p></article>
+        <article class="card"><h3>Abo-Link statt langem Schlüssel</h3><p>Die Einstellung kommt fertig an und frischt sich selbst auf. Ändert sich der Schlüssel auf dem Server, muss niemandem etwas zugeschickt werden.</p></article>
+        <article class="card"><h3>Updates über die Luft</h3><p>Die App findet neue Versionen selbst und bietet sie an. Am Rechner wird nur installiert, was unsere Signatur trägt.</p></article>
+        <article class="card"><h3>Nichts Überflüssiges</h3><p>Keine Konten in der App, keine Werbung, keine In-App-Käufe. Abo und Zahlung leben im Bot.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="faq">
+    <div class="section-head"><h2>Fragen</h2></div>
+    <div>
+        <details><summary>Braucht es Google Play oder den App Store?</summary><p>Nein. Die Datei kommt von hier, neue Versionen findet die App selbst.</p></details>
+        <details><summary>Wie installiere ich auf einem Fernseher ohne Browser?</summary><p>Über eine Downloader-App: sub.ndvsdom54.ru/tv.apk mit der Fernbedienung eingeben, die Datei startet sofort. Die Adresse ist absichtlich kurz und ohne „https://“.</p></details>
+        <details><summary>Warum brechen Bank- und Behördenseiten unter einem VPN meist ab?</summary><p>Weil ihr Verkehr durch den Tunnel läuft und die Seite eine ausländische Adresse sieht. Hier bleiben diese Seiten auf dem direkten Weg, und die Liste reist in der App mit.</p></details>
+        <details><summary>Funktioniert ein Schlüssel eines anderen Anbieters?</summary><p>Ja, wenn es ein Abo-Link oder ein Schlüssel im VLESS-Format ist. Die App ist der Eingang zum Tunnel; der Server gehört nicht dazu.</p></details>
+        <details><summary>Wie viele Geräte pro Schlüssel?</summary><p>Zwei gleichzeitig. Ein Abo-Link deckt Telefon, Fernseher und Rechner ab.</p></details>
+        <details><summary>Gibt es eine Version für iPhone oder Linux?</summary><p>Keine eigene. Der Abo-Link funktioniert in fremden Clients — etwa v2RayTun auf dem iPhone oder jedem Client auf dem sing-box-Kern.</p></details>
+        <details><summary>Was ist mit Protokollen und Konten?</summary><p>In der App gibt es weder Konten noch Werbung noch In-App-Käufe. Für das Abo kennt der Bot nur Ihr Telegram-Konto und das bezahlte Datum.</p></details>
+    </div>
+  </section>
+
+  <section class="wrap last">
+    <h2>Installieren und ausprobieren</h2>
+    <p>Die Datei kommt von hier, der Testzugang startet in der App selbst — Telegram wird dafür nicht gebraucht.</p>
+    <p class="cta">
+      <a class="btn" data-download data-files='{"android": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk", "tv": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm32.apk", "windows": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe", "mac": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg", "macintel": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg", "universal": "https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk", "ios": "https://t.me/RealityVPNBot_bot"}' data-labels='{"android": "Für Android laden", "tv": "Für den Fernseher laden", "windows": "Für Windows laden", "mac": "Für Mac laden", "macintel": "Für Mac (Intel) laden", "ios": "Bot öffnen — Schlüssel fürs iPhone"}'
+         href="https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-arm64.apk">Für Android laden</a>
+      <span class="sub">Anderes Gerät — <a href="https://github.com/narvinIR/shtil-vpn/releases/tag/apps">die vollständige Dateiliste</a></span>
+    </p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="grid three">
+    <div>
+      <h3>Dateien</h3>
+      <p><a href="https://github.com/narvinIR/shtil-vpn/releases/tag/apps">Alle Installationsdateien</a></p>
+    </div>
+    <div>
+      <h3>Quellcode</h3>
+      <p><a href="https://github.com/narvinIR/shtil-vpn-desktop">shtil-vpn-desktop</a> · MIT<br>
+      <a href="https://github.com/SagerNet/sing-box">sing-box</a> · GPL-3.0</p>
+    </div>
+    <div>
+      <h3>Support und Schlüssel</h3>
+      <p><a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+    </div>
+  </div>
+  <p>Die Android-App ist ein Fork von vpn4tv-native (GPL-3.0), die Rechner-App ist quelloffen (MIT), der sing-box-Kern steht unter GPL-3.0.</p>
+</footer>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
