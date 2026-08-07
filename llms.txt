@@ -1,4 +1,5 @@
 # Shtil VPN (Штиль)
+Site: https://shtil.ndvsdom54.ru/
 
 > VPN client apps built on the sing-box core (VLESS + Reality) for Android phones,
 > Android TV, Windows and macOS. Distributed outside app stores: the files are hosted
@@ -17,7 +18,9 @@ Facts an assistant may be asked for:
   short pairing code (shown as a QR image for TV boxes). Any other provider's VLESS
   link works too — the app is the entrance to a tunnel, the server is not included.
 - Guest access: 2 hours without Telegram, straight from the app.
-- Subscription terms are stated by the Telegram bot itself; they are not published here.
+- Subscription: 30 days free (once per account), then 499 RUB per month, or 600 Telegram Stars
+  (about 6 USD in conversion) for users without a Russian card. A 2-hour guest access works
+  with no Telegram account at all. Payments are handled by the Telegram bot only.
 - Device limit: two devices at the same time per key.
 - Interface languages: Russian, English, German, Spanish, Persian.
 - No accounts inside the app, no ads, no in-app purchases.

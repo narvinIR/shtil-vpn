@@ -6,6 +6,8 @@
 
 [Русский](README.md) · [English](README.en.md) · [Deutsch](README.de.md) · **Español** · [فارسی](README.fa.md)
 
+Sitio del producto: **[shtil.ndvsdom54.ru](https://shtil.ndvsdom54.ru/es/)**
+
 **Aplicaciones VPN sobre el núcleo [sing-box](https://github.com/SagerNet/sing-box)
 (VLESS + Reality) para teléfonos Android, Android TV, Windows y macOS.**
 
@@ -33,7 +35,7 @@ con la VPN encendida, así que mantienen toda su velocidad.
 | Clave | un enlace de suscripción de nuestro bot de Telegram — también sirve el de otro proveedor en formato VLESS |
 | Tiendas de aplicaciones | no hacen falta: distribuimos los archivos nosotros y la actualización llega por el aire |
 | Idiomas de la interfaz | ruso, inglés, alemán, español, persa |
-| Precio | 30 días gratis y después 499 ₽ al mes; 2 horas se pueden probar sin Telegram |
+| Suscripción | 30 días gratis y después 499 ₽ al mes o 600 estrellas de Telegram (unos 6 $ en conversión); 2 horas se pueden probar sin Telegram |
 | Cuentas dentro de la app | ninguna. Sin publicidad ni compras integradas |
 
 ---
@@ -57,7 +59,7 @@ instalación»](https://github.com/narvinIR/shtil-vpn/releases/tag/apps). Las di
 permanentes: cambia el archivo, el enlace se mantiene.
 
 La clave de suscripción la entrega [@RealityVPNBot_bot](https://t.me/RealityVPNBot_bot):
-30 días gratis y después 499 ₽ al mes. También se puede empezar sin Telegram — el botón
+30 días gratis y después 499 ₽ al mes, o 600 estrellas de Telegram si no hay tarjeta rusa. También se puede empezar sin Telegram — el botón
 «Probar ahora» abre una sesión de invitado de 2 horas.
 
 ---
