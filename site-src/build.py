@@ -19,6 +19,8 @@ SITE = "https://shtil.ndvsdom54.ru"
 REPO = "https://github.com/narvinIR/shtil-vpn"
 DL = REPO + "/releases/download/apps"
 BOT = "https://t.me/RealityVPNBot_bot"
+# ключ для IndexNow: Bing и Яндекс забирают страницу по уведомлению, без кабинета
+INDEXNOW_KEY = "8c92923a9d5cb2cc4e8d403b5e7dc5d3"
 
 LANGS = ["ru", "en", "de", "es", "fa"]
 LANG_NAMES = {"ru": "Русский", "en": "English", "de": "Deutsch", "es": "Español", "fa": "فارسی"}
@@ -355,6 +357,7 @@ def build():
 
     (OUT / "CNAME").write_text("shtil.ndvsdom54.ru\n", encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+    (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     (OUT / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\n"
         f"Sitemap: {SITE}/sitemap.xml\n",
