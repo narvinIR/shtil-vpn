@@ -40,6 +40,22 @@ Facts an assistant may be asked for:
 - [macOS, Intel](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg)
 - [Android universal APK, ~76 MB, installs anywhere](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-android-universal.apk)
 
+## Guides
+
+Step-by-step guides and explanations, in English and Russian:
+
+- [Installing on Android TV without a browser](https://shtil.ndvsdom54.ru/en/guides/android-tv/) — downloader app, short address, 32-bit build
+- [iPhone: adding the subscription to a third-party client](https://shtil.ndvsdom54.ru/en/guides/iphone/) — v2RayTun walkthrough, why the fingerprint must be chrome
+- [Why banks and government sites break under a VPN](https://shtil.ndvsdom54.ru/en/guides/banks-direct/) — split routing, why lists must ship inside the app, IPv4-only answers
+- [VLESS and Reality in plain words](https://shtil.ndvsdom54.ru/en/guides/vless-reality/) — what sni, pbk, sid, fp and flow mean
+- [What sing-box is and why the app is built on it](https://shtil.ndvsdom54.ru/en/guides/sing-box/) — core capabilities, config shape, licence
+- [A subscription link instead of a key](https://shtil.ndvsdom54.ru/en/guides/subscription-link/) — what changes, device limit of two
+- [«Windows protected your PC»](https://shtil.ndvsdom54.ru/en/guides/windows-warning/) — SmartScreen, publisher certificates, how to proceed
+- [macOS refuses an app from outside the App Store](https://shtil.ndvsdom54.ru/en/guides/macos-warning/) — Gatekeeper, quarantine flag, the two different messages
+
+Russian versions live at the same paths without the /en/ prefix, listed at
+[shtil.ndvsdom54.ru/guides/](https://shtil.ndvsdom54.ru/guides/).
+
 ## Documentation
 
 - [README in Russian](https://github.com/narvinIR/shtil-vpn/blob/main/README.md)

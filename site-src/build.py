@@ -7,6 +7,7 @@
     python3 site-src/build.py
 """
 
+import datetime
 import json
 import shutil
 from pathlib import Path
@@ -24,6 +25,8 @@ INDEXNOW_KEY = "8c92923a9d5cb2cc4e8d403b5e7dc5d3"
 
 LANGS = ["ru", "en", "de", "es", "fa"]
 LANG_NAMES = {"ru": "Русский", "en": "English", "de": "Deutsch", "es": "Español", "fa": "فارسی"}
+# справочник пишется на двух языках; с остальных страниц ссылка ведёт на английский
+GUIDE_LANGS = ["ru", "en"]
 
 FILES = {
     "android": f"{DL}/ShtilVPN-android-arm64.apk",
@@ -48,10 +51,41 @@ def url_for(lang, tail=""):
     )
 
 
-def head(lang, d):
-    alt = "\n".join(
-        f'  <link rel="alternate" hreflang="{l}" href="{url_for(l)}">' for l in LANGS
+def meta_head(lang, title, desc, canonical, alts, ld_list, root):
+    """Шапка документа: одна на главную и на страницы справочника."""
+    alt = "\n".join(f'  <link rel="alternate" hreflang="{l}" href="{u}">' for l, u in alts)
+    ld = "\n".join(
+        f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>'
+        for x in ld_list
     )
+    rtl = ' dir="rtl"' if lang == "fa" else ""
+    return f"""<!doctype html>
+<html lang="{lang}"{rtl}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc)}">
+<link rel="canonical" href="{canonical}">
+{alt}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{SITE}/assets/og.png">
+<meta property="og:locale" content="{lang}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="{root}assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{root}assets/icon-180.png">
+<link rel="stylesheet" href="{root}assets/style.css">
+{ld}
+</head>
+<body>
+"""
+
+
+def head(lang, d):
     faq = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -100,34 +134,16 @@ def head(lang, d):
         "isBasedOn": "https://github.com/SagerNet/sing-box",
         "author": {"@type": "Organization", "name": "Shtil VPN", "url": SITE},
     }
-    rtl = ' dir="rtl"' if lang == "fa" else ""
-    root = "" if lang == "ru" else "../"
-    return f"""<!doctype html>
-<html lang="{lang}"{rtl}>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(d["meta"]["title"])}</title>
-<meta name="description" content="{esc(d["meta"]["description"])}">
-<link rel="canonical" href="{url_for(lang)}">
-{alt}
-  <link rel="alternate" hreflang="x-default" href="{url_for("en")}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{esc(d["meta"]["title"])}">
-<meta property="og:description" content="{esc(d["meta"]["description"])}">
-<meta property="og:url" content="{url_for(lang)}">
-<meta property="og:image" content="{SITE}/assets/og.png">
-<meta property="og:locale" content="{lang}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#090e1a">
-<link rel="icon" href="{root}assets/shtil-icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{root}assets/icon-180.png">
-<link rel="stylesheet" href="{root}assets/style.css">
-<script type="application/ld+json">{json.dumps(app, ensure_ascii=False)}</script>
-<script type="application/ld+json">{json.dumps(faq, ensure_ascii=False)}</script>
-</head>
-<body>
-"""
+    alts = [(l, url_for(l)) for l in LANGS] + [("x-default", url_for("en"))]
+    return meta_head(
+        lang,
+        d["meta"]["title"],
+        d["meta"]["description"],
+        url_for(lang),
+        alts,
+        [app, faq],
+        "" if lang == "ru" else "../",
+    )
 
 
 def langs_nav(lang):
@@ -136,6 +152,132 @@ def langs_nav(lang):
         cls = ' class="on"' if l == lang else ""
         out.append(f'<a href="{url_for(l)}"{cls} hreflang="{l}">{LANG_NAMES[l]}</a>')
     return "\n      ".join(out)
+
+
+def guides_url(lang, slug=""):
+    """Адрес справочника. Языки, которых в справочнике нет, ведут на английский."""
+    base = lang if lang in GUIDE_LANGS else "en"
+    return url_for(base, f"guides/{slug}/" if slug else "guides/")
+
+
+def guide_body(blocks):
+    out = []
+    for b in blocks:
+        parts = [f"<h2>{esc(b['h2'])}</h2>"]
+        parts += [f"<p>{esc(p)}</p>" for p in b.get("p", [])]
+        if b.get("list"):
+            parts.append("<ul>" + "".join(f"<li>{esc(i)}</li>" for i in b["list"]) + "</ul>")
+        if b.get("steps"):
+            parts.append("<ol>" + "".join(f"<li>{esc(i)}</li>" for i in b["steps"]) + "</ol>")
+        out.append('<section class="block">\n  ' + "\n  ".join(parts) + "\n</section>")
+    return "\n".join(out)
+
+
+def guide_chrome(lang, sec, root, inner):
+    """Шапка, подвал и обёртка, общие для справочника и его страниц."""
+    return f"""<header class="wrap top">
+  <a class="brand" href="{url_for(lang)}">
+    <img src="{root}assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="{esc(sec["title"])}">
+    <a href="{guides_url("ru")}"{' class="on"' if lang == "ru" else ""} hreflang="ru">Русский</a>
+    <a href="{guides_url("en")}"{' class="on"' if lang == "en" else ""} hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+{inner}
+</main>
+
+<footer class="wrap">
+  <p><a href="{guides_url(lang)}">{esc(sec["all"])}</a> · <a href="{url_for(lang)}">{esc(sec["back"])}</a> · <a href="{BOT}">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="{root}assets/app.js" defer></script>
+</body>
+</html>
+"""
+
+
+def render_guide(lang, art, sec, updated):
+    root = "../../../" if lang != "ru" else "../../"
+    canonical = guides_url(lang, art["slug"])
+    alts = [(l, guides_url(l, art["slug"])) for l in GUIDE_LANGS]
+    alts.append(("x-default", guides_url("en", art["slug"])))
+    ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            "headline": art["title"],
+            "description": art["description"],
+            "inLanguage": lang,
+            "url": canonical,
+            "dateModified": updated,
+            "author": {"@type": "Organization", "name": "Shtil VPN", "url": SITE},
+            "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": SITE},
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": url_for(lang)},
+                {"@type": "ListItem", "position": 2, "name": sec["title"], "item": guides_url(lang)},
+                {"@type": "ListItem", "position": 3, "name": art["title"], "item": canonical},
+            ],
+        },
+    ]
+    inner = f"""  <article>
+    <p class="crumbs"><a href="{guides_url(lang)}">{esc(sec["title"])}</a></p>
+    <h1>{esc(art["title"])}</h1>
+    <p class="lead">{esc(art["lead"])}</p>
+{guide_body(art["blocks"])}
+    <p class="updated">{esc(sec["updated"])}: {updated}</p>
+  </article>"""
+    return meta_head(lang, art["title"], art["description"], canonical, alts, ld, root) + guide_chrome(
+        lang, sec, root, inner
+    )
+
+
+def render_guides_index(lang, data, updated):
+    root = "../" if lang == "ru" else "../../"
+    sec = data["section"]
+    canonical = guides_url(lang)
+    alts = [(l, guides_url(l)) for l in GUIDE_LANGS] + [("x-default", guides_url("en"))]
+    ld = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": sec["meta_title"],
+            "description": sec["description"],
+            "inLanguage": lang,
+            "url": canonical,
+            "dateModified": updated,
+            "hasPart": [
+                {
+                    "@type": "TechArticle",
+                    "headline": a["title"],
+                    "description": a["description"],
+                    "url": guides_url(lang, a["slug"]),
+                }
+                for a in data["articles"]
+            ],
+        }
+    ]
+    cards = "\n        ".join(
+        f'<article class="card"><h3><a href="{guides_url(lang, a["slug"])}">{esc(a["title"])}</a></h3>'
+        f'<p>{esc(a["description"])}</p></article>'
+        for a in data["articles"]
+    )
+    inner = f"""  <div class="section-head">
+    <h1>{esc(sec["title"])}</h1>
+    <p>{esc(sec["lead"])}</p>
+  </div>
+  <div class="grid two">
+        {cards}
+  </div>"""
+    return meta_head(lang, sec["meta_title"], sec["description"], canonical, alts, ld, root) + guide_chrome(
+        lang, sec, root, inner
+    )
 
 
 def schema_svg(d):
@@ -211,6 +353,7 @@ def render(lang, d):
     <img src="{root}assets/shtil-mark.svg" alt="" width="34" height="34">
     <b>{esc(d["brand"])}</b>
   </a>
+  <a class="to-guides" href="{guides_url(lang)}">{esc(d["meta"]["guides"])}</a>
   <nav class="langs" aria-label="{esc(d["meta"]["langs"])}">
       {langs_nav(lang)}
   </nav>
@@ -355,6 +498,22 @@ def build():
         target.write_text(page, encoding="utf-8")
         print(f"{lang}: {len(page) // 1024} КБ → {target.relative_to(ROOT)}")
 
+    guide_pages = [""]  # пустой хвост — сам индекс справочника
+    for lang in GUIDE_LANGS:
+        src = SRC / "i18n" / f"guides.{lang}.json"
+        data = json.loads(src.read_text(encoding="utf-8"))
+        updated = datetime.date.fromtimestamp(src.stat().st_mtime).isoformat()
+        base = OUT / "guides" if lang == "ru" else OUT / lang / "guides"
+        base.mkdir(parents=True, exist_ok=True)
+        (base / "index.html").write_text(render_guides_index(lang, data, updated), encoding="utf-8")
+        for art in data["articles"]:
+            page = base / art["slug"]
+            page.mkdir(exist_ok=True)
+            (page / "index.html").write_text(render_guide(lang, art, data["section"], updated), encoding="utf-8")
+            if lang == GUIDE_LANGS[0]:
+                guide_pages.append(art["slug"])
+        print(f"{lang}: справочник — {len(data['articles'])} статей → {base.relative_to(ROOT)}")
+
     (OUT / "CNAME").write_text("shtil.ndvsdom54.ru\n", encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
@@ -372,6 +531,17 @@ def build():
         )
         + "  </url>"
         for l in LANGS
+    )
+    urls += "\n" + "\n".join(
+        "  <url>\n"
+        f"    <loc>{guides_url(l, slug)}</loc>\n"
+        + "".join(
+            f'    <xhtml:link rel="alternate" hreflang="{a}" href="{guides_url(a, slug)}"/>\n'
+            for a in GUIDE_LANGS
+        )
+        + "  </url>"
+        for slug in guide_pages
+        for l in GUIDE_LANGS
     )
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

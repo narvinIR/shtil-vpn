@@ -3,7 +3,8 @@
   "meta": {
     "title": "Shtil VPN — sing-box client for Android, TV, Windows and macOS",
     "description": "A VPN app on the sing-box core (VLESS + Reality) for Android phones, Android TV, Windows and macOS. Russian sites keep the direct route, the key comes from a Telegram bot, updates arrive over the air.",
-    "langs": "Page language"
+    "langs": "Page language",
+    "guides": "Guides"
   },
   "hero": {
     "h1": "A calm connection",

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why banks and government sites break when the VPN is on</title>
+<meta name="description" content="The actual cause: the site sees a foreign address and raises its defences. How a split route works on the device itself, and why the address lists have to live inside the app.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/banks-direct/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Why banks and government sites break when the VPN is on">
+<meta property="og:description" content="The actual cause: the site sees a foreign address and raises its defences. How a split route works on the device itself, and why the address lists have to live inside the app.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="stylesheet" href="../../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Why banks and government sites break when the VPN is on", "description": "The actual cause: the site sees a foreign address and raises its defences. How a split route works on the device itself, and why the address lists have to live inside the app.", "inLanguage": "en", "url": "https://shtil.ndvsdom54.ru/en/guides/banks-direct/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shtil.ndvsdom54.ru/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "Why banks and government sites break when the VPN is on", "item": "https://shtil.ndvsdom54.ru/en/guides/banks-direct/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/en/">
+    <img src="../../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Guides">
+    <a href="https://shtil.ndvsdom54.ru/guides/" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" class="on" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/en/guides/">Guides</a></p>
+    <h1>Why banks and government sites break when the VPN is on</h1>
+    <p class="lead">This is the single most common complaint about any VPN: you switch it on and your bank asks for extra confirmation, the government portal refuses you, the marketplace shows different prices. The cause is simple, and the fix is not «turn the VPN off».</p>
+<section class="block">
+  <h2>What is actually happening</h2>
+  <p>An ordinary VPN pushes every packet through the tunnel. A local site then sees a request from a foreign address and does exactly what it was built to do: raises its defences, demands extra confirmation, sometimes refuses outright.</p>
+  <p>This is not about VPNs being banned. To a bank, a login from another country is a sign of a stolen account, and reacting to it is its job.</p>
+</section>
+<section class="block">
+  <h2>How it gets solved</h2>
+  <p>The route splits on the device itself: foreign addresses go through the encrypted tunnel, local ones go straight out as if the VPN were off. The site sees you at home, speed does not drop, extra checks never fire.</p>
+  <p>Shtil does this out of the box, but the technique is general — in clients built on the sing-box core it is called route splitting.</p>
+</section>
+<section class="block">
+  <h2>Two details everyone trips over</h2>
+  <ul><li>The lists of local domains and addresses must ship inside the app. Many clients fetch them at startup — and the server holding those lists is often unreachable from the very country that needs them, so the VPN never comes up at all.</li><li>For domains on the direct route, only the IPv4 address should be answered. Otherwise the device slips around the split via IPv6 and the site still sees a foreign visitor — the quietest failure of the lot.</li></ul>
+</section>
+<section class="block">
+  <h2>How to check it</h2>
+  <ol><li>Connect.</li><li>Open a site that reports your public address — it should show a foreign one.</li><li>Immediately open a local site that guesses your city — it should place you at home.</li><li>If both say «abroad», the split is not working and everything is going through the tunnel.</li></ol>
+</section>
+    <p class="updated">Checked: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/en/guides/">All guides</a> · <a href="https://shtil.ndvsdom54.ru/en/">Home</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

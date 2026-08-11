@@ -1,0 +1,322 @@
+{
+  "section": {
+    "title": "Guides",
+    "meta_title": "Shtil VPN guides — installing, internals, common questions",
+    "description": "Step-by-step guides and plain explanations: Android TV without a browser, iPhone via a third-party client, why local sites break under a VPN, what VLESS + Reality and the sing-box core actually do, and the Windows and macOS install prompts.",
+    "lead": "Walkthroughs and explanations. Only the things people actually ask us about.",
+    "back": "Home",
+    "all": "All guides",
+    "updated": "Checked"
+  },
+  "articles": [
+    {
+      "slug": "android-tv",
+      "title": "Installing a VPN on Android TV when the box has no browser",
+      "description": "Step by step: the Downloader app, a short remote-friendly address, what the system will ask, and how to finish the install with a remote. Plus why a TV needs the 32-bit build.",
+      "lead": "Android TV boxes rarely ship a browser, and the store only lists what the store has. The normal way in is a downloader app — it takes a couple of minutes and uses nothing but built-in system behaviour.",
+      "blocks": [
+        {
+          "h2": "What you need",
+          "list": [
+            "An Android TV box or TV set, version 6.0 or newer.",
+            "The remote. A mouse and keyboard make it faster but are not required.",
+            "Any downloader app from your TV store. Downloader by AFTVnews is the most common one and is available almost everywhere.",
+            "Your phone nearby — handy for opening the bot and showing the TV a pairing code."
+          ]
+        },
+        {
+          "h2": "Steps",
+          "steps": [
+            "Open the store on your TV and install Downloader if it is not there yet.",
+            "Launch it and type this address with the remote: sub.ndvsdom54.ru/tv.apk — no «https://», no «www». The address is deliberately short, because typing long strings with a remote is painful.",
+            "The file downloads on its own. The system will ask once whether this source may install apps — allow it for the downloader.",
+            "Next comes Google's red verification screen. It appears for any file installed outside the store; the button you need is «Install anyway», at the bottom, reachable with the remote.",
+            "Open Shtil and press «Try now» — two hours start immediately, with no Telegram and no email.",
+            "For a permanent key, take a pairing code from the bot: the TV shows a field for a short code, the phone shows the code as an image. The key arrives by itself."
+          ]
+        },
+        {
+          "h2": "Why the TV gets the 32-bit build",
+          "p": [
+            "TV boxes are overwhelmingly 32-bit, even recent models. The remote-friendly address always serves the 32-bit build: it runs everywhere, while the 64-bit one simply refuses to install on half of them.",
+            "Installing on a phone instead? Use the main button on the home page — it picks the right build for your device automatically."
+          ]
+        },
+        {
+          "h2": "If the downloader rejects the address",
+          "p": [
+            "Downloader dislikes addresses that start with «https://» — type the string exactly as shown, starting at «sub».",
+            "Some firmware blocks installs until «unknown sources» is enabled for that specific downloader in the security settings. You grant it once and it stays."
+          ]
+        },
+        {
+          "h2": "The app is installed — what now",
+          "p": [
+            "One button connects. While the tunnel is up, local sites stay on the direct route — which matters on a TV, because built-in services and firmware updates go straight out and stay fast.",
+            "Updates are found by the app itself: when a new version appears, it offers to install it on the same screen."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "iphone",
+      "title": "iPhone: adding the subscription to a third-party client",
+      "description": "We ship no iPhone build of our own — the subscription works in any client on the same core. Walkthrough with v2RayTun: where the link goes, which settings matter and which to leave alone.",
+      "lead": "There is no iPhone build from us: publishing to the App Store requires a company, not a person. The subscription link, however, is a standard one and opens in any client running the sing-box or Xray core.",
+      "blocks": [
+        {
+          "h2": "What you paste",
+          "p": [
+            "The bot has a «My VPN» button that hands you a subscription link — a single line starting with https://sub.ndvsdom54.ru/sub/… That is what goes into the client.",
+            "A subscription link beats a bare key: when server settings change, the app pulls the new ones itself and nothing has to be re-shared."
+          ]
+        },
+        {
+          "h2": "Steps in v2RayTun",
+          "steps": [
+            "Install v2RayTun from the App Store.",
+            "Copy the subscription link from the bot.",
+            "In the app tap «+» → «Add from clipboard». The client parses the link and loads the profile.",
+            "Select the profile and tap connect. iOS asks once for permission to add a VPN configuration — a system prompt, and the tunnel will not come up without it.",
+            "Verify it works: open any foreign site, then any local one — the second should load exactly as fast as it did without the VPN."
+          ]
+        },
+        {
+          "h2": "What not to do",
+          "list": [
+            "Do not push your own routing rules into it: v2RayTun has built-in ones that work, and it silently ignores custom deep links and headers.",
+            "Do not change the TLS fingerprint. For Reality on iPhone it must be chrome — with safari the connection drops, which has been confirmed more than once.",
+            "Do not keep two VPN profiles active at once: iOS gives the tunnel to one of them, and the other will show «connected» while doing nothing."
+          ]
+        },
+        {
+          "h2": "If it keeps dropping",
+          "p": [
+            "Check the boring things first: subscription expiry in the bot, low-power mode, and iCloud Private Relay — the last one conflicts with the tunnel.",
+            "Re-creating the profile from the link helps more often than it should: clients cache old settings longer than you expect.",
+            "One key serves two devices at the same time. If the iPhone is the third one, connections will keep breaking — disconnect a device you no longer use."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "banks-direct",
+      "title": "Why banks and government sites break when the VPN is on",
+      "description": "The actual cause: the site sees a foreign address and raises its defences. How a split route works on the device itself, and why the address lists have to live inside the app.",
+      "lead": "This is the single most common complaint about any VPN: you switch it on and your bank asks for extra confirmation, the government portal refuses you, the marketplace shows different prices. The cause is simple, and the fix is not «turn the VPN off».",
+      "blocks": [
+        {
+          "h2": "What is actually happening",
+          "p": [
+            "An ordinary VPN pushes every packet through the tunnel. A local site then sees a request from a foreign address and does exactly what it was built to do: raises its defences, demands extra confirmation, sometimes refuses outright.",
+            "This is not about VPNs being banned. To a bank, a login from another country is a sign of a stolen account, and reacting to it is its job."
+          ]
+        },
+        {
+          "h2": "How it gets solved",
+          "p": [
+            "The route splits on the device itself: foreign addresses go through the encrypted tunnel, local ones go straight out as if the VPN were off. The site sees you at home, speed does not drop, extra checks never fire.",
+            "Shtil does this out of the box, but the technique is general — in clients built on the sing-box core it is called route splitting."
+          ]
+        },
+        {
+          "h2": "Two details everyone trips over",
+          "list": [
+            "The lists of local domains and addresses must ship inside the app. Many clients fetch them at startup — and the server holding those lists is often unreachable from the very country that needs them, so the VPN never comes up at all.",
+            "For domains on the direct route, only the IPv4 address should be answered. Otherwise the device slips around the split via IPv6 and the site still sees a foreign visitor — the quietest failure of the lot."
+          ]
+        },
+        {
+          "h2": "How to check it",
+          "steps": [
+            "Connect.",
+            "Open a site that reports your public address — it should show a foreign one.",
+            "Immediately open a local site that guesses your city — it should place you at home.",
+            "If both say «abroad», the split is not working and everything is going through the tunnel."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vless-reality",
+      "title": "VLESS and Reality in plain words",
+      "description": "How VLESS differs from older protocols, what Reality does with the TLS handshake, and why such a node has no certificate of its own. No formulas.",
+      "lead": "Two words you meet in every modern key. Here is what each one does — enough to understand what you were handed and why it is configured this way.",
+      "blocks": [
+        {
+          "h2": "VLESS is transport with nothing extra",
+          "p": [
+            "VLESS carries your data and deliberately does nothing beyond that: no encryption of its own, no heavy headers. Encryption is handled by the TLS layer above it.",
+            "The practical result is lower overhead — a lighter, faster connection, which shows most on weak hardware such as TV boxes."
+          ]
+        },
+        {
+          "h2": "Reality is a way to look like an ordinary site",
+          "p": [
+            "A normal secure endpoint presents a certificate of its own, and that certificate makes it easy to recognise. Reality takes another path: while establishing the connection it borrows the handshake of a real third-party site that you name in the settings.",
+            "From the outside it looks like an ordinary visit to that site. Such a node has no certificate at all — so nothing expires, nothing needs renewing, and there is no distinguishing mark to match against."
+          ]
+        },
+        {
+          "h2": "What the fields in a key mean",
+          "list": [
+            "sni — the name of the site whose handshake is borrowed.",
+            "pbk — the public half of the server key; the client uses it to confirm it is talking to the right node.",
+            "sid — a short identifier separating clients on one node.",
+            "fp — which browser your client imitates. On iPhone it is always chrome; with safari the connection drops.",
+            "flow — the transfer mode; in our keys it is what lets data pass without an extra wrapping layer."
+          ]
+        },
+        {
+          "h2": "Why this is not just another protocol",
+          "p": [
+            "The difference is not speed, it is how the connection looks from outside. Older protocols were recognisable by a characteristic pattern — a problem anywhere the network is picky about unfamiliar traffic.",
+            "Reality does not invent a new pattern; it borrows one that is already ordinary. That is the whole idea."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "sing-box",
+      "title": "What sing-box is and why the app is built on it",
+      "description": "The sing-box core: what it does inside a client, how it differs from its predecessors, how its config is shaped, and why the core ships inside the app instead of being downloaded.",
+      "lead": "sing-box is an open-source core that does the actual work: it holds the tunnel, reads the routing rules and decides where each request goes. The app around it is the screens, the buttons and the link to the bot.",
+      "blocks": [
+        {
+          "h2": "What it can do",
+          "list": [
+            "Speak several protocols from one core — VLESS, Trojan, Shadowsocks and others, without a separate program for each.",
+            "Split routes by rule: domain, address, country, or a specific app on the device.",
+            "Raise a system-wide tunnel that carries every program's traffic, not just the browser's.",
+            "Resolve names itself — which matters, because a plain name lookup leaks half of your privacy."
+          ]
+        },
+        {
+          "h2": "Why the core ships inside the app",
+          "p": [
+            "Many clients download the core and the routing lists on first launch. That works beautifully until the day the address they download from stops answering: the app is then empty and will not connect.",
+            "Ours are compiled in. The internet is needed for the connection itself and nothing else — install and it works, even when third-party addresses are unreachable."
+          ]
+        },
+        {
+          "h2": "What configuration looks like",
+          "p": [
+            "A sing-box configuration is a plain JSON file: inbounds, outbounds, routing rules. The subscription serves a ready-made one, and the app only adjusts local ports in it.",
+            "That is also what makes the subscription portable: the same address opens in any client on the same core — desktop, phone or TV box."
+          ]
+        },
+        {
+          "h2": "Licence and source",
+          "p": [
+            "sing-box is distributed under GPL-3.0 with open sources. Our desktop app is open too; both repositories are linked in the footer of the home page."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "subscription-link",
+      "title": "A subscription link instead of a key: why",
+      "description": "How a subscription link differs from a bare key, why nothing has to be moved by hand when settings change, and how one address serves phone, TV and desktop at once.",
+      "lead": "A key is one line describing one connection. A subscription link is an address where that line lives and keeps itself current. The difference looks small right up until the first time server settings change.",
+      "blocks": [
+        {
+          "h2": "What changes in practice",
+          "list": [
+            "Server settings changed — devices pull the new ones themselves, and nothing has to be re-sent to anybody.",
+            "One address covers all of your devices: phone, TV, desktop.",
+            "The expiry date travels with the settings, so the app can honestly show how much time is left.",
+            "You never type it: the TV reads it off your phone's screen, the desktop takes a short code from the bot."
+          ]
+        },
+        {
+          "h2": "Where to get it",
+          "p": [
+            "In the bot, the «My VPN» button. The bare key sits there too, behind a separate button — it is rarely needed, mostly for clients that do not understand subscriptions.",
+            "The two-hour trial is taken inside the app with no Telegram at all: it issues a temporary subscription on the same principle."
+          ]
+        },
+        {
+          "h2": "How many devices",
+          "p": [
+            "Two at the same time per key. That is not a limit on installs: put the app on five devices if you like — the limit counts simultaneous connections.",
+            "A third device does not get a clean refusal; instead connections start breaking for one device, then another. If your link feels unstable, first check whether an old phone is still connected."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "windows-warning",
+      "title": "«Windows protected your PC»: what it is and what to press",
+      "description": "The SmartScreen prompt for apps without a publisher certificate: why it appears, how a certificate differs from actual safety, and how to get through it in two clicks.",
+      "lead": "The blue window looks alarming while saying something quite modest: «I am seeing this program for the first time». Here is where it comes from and what to press.",
+      "blocks": [
+        {
+          "h2": "Getting through",
+          "steps": [
+            "In the blue window click «More info» — the link is inconspicuous on purpose.",
+            "A «Run anyway» button appears. Click it.",
+            "The installer then behaves normally, and the prompt will not come back on later launches."
+          ]
+        },
+        {
+          "h2": "Why it appears",
+          "p": [
+            "Windows does not judge the contents of a program; it judges its reputation — how many people have already run this exact file, and whether it carries a publisher certificate. A new program has no reputation by definition.",
+            "We did not buy a publisher certificate. Since 2024 instant trust is not for sale anyway: the rules tightened, and reputation is still earned through install counts. We would rather explain the prompt in plain words than charge the subscription for it."
+          ]
+        },
+        {
+          "h2": "How to check the file if you are uneasy",
+          "list": [
+            "Download only from our address or the releases page — file names are permanent and do not change between versions.",
+            "Any file can be checked with free online scanners that run dozens of antivirus engines at once.",
+            "The desktop app's sources are open, and the build is produced from them in public."
+          ]
+        },
+        {
+          "h2": "Updates",
+          "p": [
+            "Once installed, the app checks for new versions itself and installs only what is signed with our own key. So you see the prompt exactly once — at first install."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "macos-warning",
+      "title": "macOS refuses to open an app from outside the App Store",
+      "description": "Gatekeeper and the quarantine flag: how «developer cannot be verified» differs from «the app is damaged», and how to open the program the supported way in two steps.",
+      "lead": "macOS will not allow the first launch of a program downloaded outside the App Store. This is expected behaviour, and there is a supported button for it — nothing needs to be broken.",
+      "blocks": [
+        {
+          "h2": "How to open it",
+          "steps": [
+            "Try opening the app with a normal double click. The system refuses — as designed.",
+            "Open System Settings → Privacy & Security.",
+            "Scroll to the bottom: a line about the blocked app appears, with an «Open Anyway» button.",
+            "Click it and enter the administrator password. From then on the app opens with a double click and the question does not return."
+          ]
+        },
+        {
+          "h2": "Two different messages — do not confuse them",
+          "list": [
+            "«Developer cannot be verified» — the ordinary case: the app is signed but not notarised by Apple. The button above handles it.",
+            "«The application is damaged and should be moved to the Bin» — a different thing: there is no signature at all and the browser attached a quarantine flag. In that case the system shows no override button."
+          ]
+        },
+        {
+          "h2": "What to do about the second one",
+          "p": [
+            "Download a current build from our address: since August 2026 macOS builds are signed with our own key and this message no longer appears.",
+            "There are two Mac builds — Apple silicon and Intel. The browser does not reveal which one you need, which is why the page shows two buttons; if the app will not start, check that you took the right build first."
+          ]
+        },
+        {
+          "h2": "Why the app is not in the App Store",
+          "p": [
+            "Only a company can publish there, not a private person. So the file is served directly, and the app finds its own updates, installing only what is signed with our key."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPhone: adding the subscription to a third-party client</title>
+<meta name="description" content="We ship no iPhone build of our own — the subscription works in any client on the same core. Walkthrough with v2RayTun: where the link goes, which settings matter and which to leave alone.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/iphone/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iPhone: adding the subscription to a third-party client">
+<meta property="og:description" content="We ship no iPhone build of our own — the subscription works in any client on the same core. Walkthrough with v2RayTun: where the link goes, which settings matter and which to leave alone.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="stylesheet" href="../../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "iPhone: adding the subscription to a third-party client", "description": "We ship no iPhone build of our own — the subscription works in any client on the same core. Walkthrough with v2RayTun: where the link goes, which settings matter and which to leave alone.", "inLanguage": "en", "url": "https://shtil.ndvsdom54.ru/en/guides/iphone/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shtil.ndvsdom54.ru/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "iPhone: adding the subscription to a third-party client", "item": "https://shtil.ndvsdom54.ru/en/guides/iphone/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/en/">
+    <img src="../../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Guides">
+    <a href="https://shtil.ndvsdom54.ru/guides/" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" class="on" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/en/guides/">Guides</a></p>
+    <h1>iPhone: adding the subscription to a third-party client</h1>
+    <p class="lead">There is no iPhone build from us: publishing to the App Store requires a company, not a person. The subscription link, however, is a standard one and opens in any client running the sing-box or Xray core.</p>
+<section class="block">
+  <h2>What you paste</h2>
+  <p>The bot has a «My VPN» button that hands you a subscription link — a single line starting with https://sub.ndvsdom54.ru/sub/… That is what goes into the client.</p>
+  <p>A subscription link beats a bare key: when server settings change, the app pulls the new ones itself and nothing has to be re-shared.</p>
+</section>
+<section class="block">
+  <h2>Steps in v2RayTun</h2>
+  <ol><li>Install v2RayTun from the App Store.</li><li>Copy the subscription link from the bot.</li><li>In the app tap «+» → «Add from clipboard». The client parses the link and loads the profile.</li><li>Select the profile and tap connect. iOS asks once for permission to add a VPN configuration — a system prompt, and the tunnel will not come up without it.</li><li>Verify it works: open any foreign site, then any local one — the second should load exactly as fast as it did without the VPN.</li></ol>
+</section>
+<section class="block">
+  <h2>What not to do</h2>
+  <ul><li>Do not push your own routing rules into it: v2RayTun has built-in ones that work, and it silently ignores custom deep links and headers.</li><li>Do not change the TLS fingerprint. For Reality on iPhone it must be chrome — with safari the connection drops, which has been confirmed more than once.</li><li>Do not keep two VPN profiles active at once: iOS gives the tunnel to one of them, and the other will show «connected» while doing nothing.</li></ul>
+</section>
+<section class="block">
+  <h2>If it keeps dropping</h2>
+  <p>Check the boring things first: subscription expiry in the bot, low-power mode, and iCloud Private Relay — the last one conflicts with the tunnel.</p>
+  <p>Re-creating the profile from the link helps more often than it should: clients cache old settings longer than you expect.</p>
+  <p>One key serves two devices at the same time. If the iPhone is the third one, connections will keep breaking — disconnect a device you no longer use.</p>
+</section>
+    <p class="updated">Checked: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/en/guides/">All guides</a> · <a href="https://shtil.ndvsdom54.ru/en/">Home</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

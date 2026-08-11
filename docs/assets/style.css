@@ -220,3 +220,31 @@ footer a { color: var(--accent); }
 .last { text-align: center; }
 .last p { color: var(--text-muted); max-width: 34rem; margin: .9rem auto 0; }
 .last .cta { margin-top: 1.8rem; }
+
+/* справочник: колонка текста шириной в строку чтения */
+.to-guides {
+  margin-left: auto; text-decoration: none; color: var(--text-muted);
+  font-size: .92rem; padding: .3rem .6rem; border-radius: var(--radius-sm);
+}
+.to-guides:hover { color: var(--text); background: var(--surface); }
+.to-guides + .langs { margin-left: 0; }
+[dir="rtl"] .to-guides { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .to-guides + .langs { margin-right: 0; }
+
+.guide { padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.guide article { max-width: 44rem; }
+.guide h1 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); }
+.guide .crumbs { margin-bottom: 1rem; font-size: .92rem; }
+.guide .crumbs a { color: var(--text-muted); text-decoration: none; }
+.guide .crumbs a:hover { color: var(--text); }
+.guide p.lead { color: var(--text-muted); font-size: clamp(1.05rem, 2vw, 1.2rem); margin-top: 1rem; }
+.guide .block { margin-top: clamp(2rem, 4vw, 2.8rem); }
+.guide .block h2 { font-size: clamp(1.25rem, 2.6vw, 1.6rem); margin-bottom: .9rem; }
+.guide .block p { margin-top: .8rem; line-height: 1.62; }
+.guide .block ul, .guide .block ol { margin-top: .9rem; padding-left: 1.3rem; display: grid; gap: .6rem; }
+.guide .block li { line-height: 1.58; }
+.guide .block ol li::marker { color: var(--accent); font-weight: 700; }
+.guide .updated { margin-top: 2.6rem; color: var(--text-muted); font-size: .88rem; }
+.guide .card h3 a { text-decoration: none; }
+.guide .card h3 a:hover { text-decoration: underline; }
+[dir="rtl"] .guide .block ul, [dir="rtl"] .guide .block ol { padding-left: 0; padding-right: 1.3rem; }

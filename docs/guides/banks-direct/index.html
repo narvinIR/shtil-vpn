@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Почему под VPN ломаются банк, госуслуги и маркетплейсы</title>
+<meta name="description" content="Разбор причины: сайт видит иностранный адрес и включает защиту. Как устроено раздвоение маршрута прямо на устройстве и почему списки адресов должны лежать внутри приложения.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/banks-direct/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/banks-direct/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/banks-direct/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Почему под VPN ломаются банк, госуслуги и маркетплейсы">
+<meta property="og:description" content="Разбор причины: сайт видит иностранный адрес и включает защиту. Как устроено раздвоение маршрута прямо на устройстве и почему списки адресов должны лежать внутри приложения.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/banks-direct/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Почему под VPN ломаются банк, госуслуги и маркетплейсы", "description": "Разбор причины: сайт видит иностранный адрес и включает защиту. Как устроено раздвоение маршрута прямо на устройстве и почему списки адресов должны лежать внутри приложения.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/banks-direct/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "Почему под VPN ломаются банк, госуслуги и маркетплейсы", "item": "https://shtil.ndvsdom54.ru/guides/banks-direct/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>Почему под VPN ломаются банк, госуслуги и маркетплейсы</h1>
+    <p class="lead">Это самая частая жалоба на любой VPN: включил — и банк просит подтверждение, госуслуги не пускают, маркетплейс показывает другие цены. Причина простая, и лечится она не отключением VPN.</p>
+<section class="block">
+  <h2>Что происходит на самом деле</h2>
+  <p>Обычный VPN уводит в туннель весь трафик без разбора. Российский сайт видит запрос с иностранного адреса и делает ровно то, чему его учили: включает дополнительную защиту, просит подтверждение входа, а иногда просто отказывает.</p>
+  <p>Дело не в запрете VPN. Для банка вход из другой страны — признак угнанного аккаунта, и он обязан на него реагировать.</p>
+</section>
+<section class="block">
+  <h2>Как это решается</h2>
+  <p>Маршрут раздваивается прямо на устройстве: зарубежные адреса идут через зашифрованный туннель, российские — напрямую, как будто VPN выключен. Сайт видит вас из России, скорость не падает, лишних проверок нет.</p>
+  <p>«Штиль» так работает из коробки, но приём общий: в клиентах на ядре sing-box он называется разделением маршрута.</p>
+</section>
+<section class="block">
+  <h2>Две тонкости, на которых обычно спотыкаются</h2>
+  <ul><li>Списки российских доменов и адресов должны лежать внутри приложения. Многие клиенты скачивают их при запуске — а сервер со списками из России часто недоступен, и тогда VPN не включается вовсе.</li><li>По доменам, которые идут напрямую, нужно отдавать только адрес IPv4. Иначе устройство уйдёт в обход маршрута по IPv6, и сайт всё равно откроется «из-за границы» — самая незаметная поломка из всех.</li></ul>
+</section>
+<section class="block">
+  <h2>Как проверить, что всё правильно</h2>
+  <ol><li>Включите соединение.</li><li>Откройте сайт, который показывает ваш адрес в интернете, — он должен показать зарубежный.</li><li>Тут же откройте российский сайт с определением города — он должен узнать вас из России.</li><li>Если оба показывают заграницу, раздвоение маршрута не работает: трафик идёт в туннель целиком.</li></ol>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

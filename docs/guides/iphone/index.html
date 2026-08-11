@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPhone: как добавить подписку в сторонний клиент</title>
+<meta name="description" content="Своего приложения для iPhone у нас нет — подписка работает в клиентах на том же ядре. Разбор на примере v2RayTun: куда вставлять ссылку, какие настройки трогать, а какие не надо.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/iphone/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/iphone/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/iphone/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="iPhone: как добавить подписку в сторонний клиент">
+<meta property="og:description" content="Своего приложения для iPhone у нас нет — подписка работает в клиентах на том же ядре. Разбор на примере v2RayTun: куда вставлять ссылку, какие настройки трогать, а какие не надо.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/iphone/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "iPhone: как добавить подписку в сторонний клиент", "description": "Своего приложения для iPhone у нас нет — подписка работает в клиентах на том же ядре. Разбор на примере v2RayTun: куда вставлять ссылку, какие настройки трогать, а какие не надо.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/iphone/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "iPhone: как добавить подписку в сторонний клиент", "item": "https://shtil.ndvsdom54.ru/guides/iphone/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>iPhone: как добавить подписку в сторонний клиент</h1>
+    <p class="lead">Своей сборки под iPhone у нас нет: чтобы выложить приложение в App Store, нужна компания, а не человек. Зато ссылка-подписка — стандартная, она открывается в любом клиенте на ядре sing-box или Xray.</p>
+<section class="block">
+  <h2>Что вставлять</h2>
+  <p>В боте есть кнопка «Мой VPN» — она выдаёт ссылку-подписку. Это одна строка вида https://sub.ndvsdom54.ru/sub/…; её и нужно добавить в клиент.</p>
+  <p>Ссылка-подписка удобнее голого ключа: когда настройки на сервере меняются, приложение подтягивает новые само, и переносить ничего не нужно.</p>
+</section>
+<section class="block">
+  <h2>Шаги в v2RayTun</h2>
+  <ol><li>Поставьте v2RayTun из App Store.</li><li>Скопируйте ссылку-подписку из бота.</li><li>В приложении нажмите «+» → «Добавить из буфера обмена». Клиент сам разберёт ссылку и загрузит профиль.</li><li>Выберите профиль и нажмите «Подключить». Первый раз iOS попросит разрешение на добавление конфигурации VPN — это системный запрос, без него туннель не поднимется.</li><li>Проверьте, что соединение живо: откройте любой зарубежный сайт и заодно любой российский — второй должен открываться так же быстро, как без VPN.</li></ol>
+</section>
+<section class="block">
+  <h2>Чего делать не надо</h2>
+  <ul><li>Не подставляйте свой набор правил маршрутизации: у v2RayTun есть встроенные, и они работают, а самодельные ссылки и заголовки клиент молча игнорирует.</li><li>Не меняйте отпечаток TLS. Для Reality на iPhone он должен быть chrome — с safari соединение обрывается, это проверялось не один раз.</li><li>Не держите включёнными два VPN-профиля сразу: iOS отдаёт туннель одному, а второй будет показывать «подключено» и не работать.</li></ul>
+</section>
+<section class="block">
+  <h2>Если отваливается</h2>
+  <p>Сначала проверьте очевидное: срок подписки в боте, режим энергосбережения и «Частный узел iCloud» — последний конфликтует с туннелем.</p>
+  <p>Помогает пересоздать профиль из ссылки заново: клиент кэширует старые настройки дольше, чем кажется.</p>
+  <p>Один ключ работает на двух устройствах одновременно. Если iPhone третий по счёту, соединение будет рваться — отключите лишнее устройство.</p>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

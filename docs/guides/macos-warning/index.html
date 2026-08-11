@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>macOS не открывает приложение не из App Store</title>
+<meta name="description" content="Gatekeeper и метка карантина: чем «не удаётся проверить разработчика» отличается от «приложение повреждено», и как открыть программу штатным способом за два шага.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/macos-warning/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/macos-warning/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/macos-warning/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/macos-warning/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="macOS не открывает приложение не из App Store">
+<meta property="og:description" content="Gatekeeper и метка карантина: чем «не удаётся проверить разработчика» отличается от «приложение повреждено», и как открыть программу штатным способом за два шага.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/macos-warning/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "macOS не открывает приложение не из App Store", "description": "Gatekeeper и метка карантина: чем «не удаётся проверить разработчика» отличается от «приложение повреждено», и как открыть программу штатным способом за два шага.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/macos-warning/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "macOS не открывает приложение не из App Store", "item": "https://shtil.ndvsdom54.ru/guides/macos-warning/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>macOS не открывает приложение не из App Store</h1>
+    <p class="lead">Первый запуск программы, скачанной мимо App Store, macOS не разрешит. Это ожидаемое поведение системы, и обходится оно штатной кнопкой — ломать защиту не нужно.</p>
+<section class="block">
+  <h2>Как открыть</h2>
+  <ol><li>Попробуйте открыть приложение обычным двойным щелчком. Система откажет — так и должно быть.</li><li>Откройте «Системные настройки» → «Конфиденциальность и безопасность».</li><li>Прокрутите вниз: там появится строка о заблокированном приложении и кнопка «Открыть всё равно».</li><li>Нажмите её и введите пароль администратора. Дальше приложение открывается обычным щелчком, вопрос больше не повторится.</li></ol>
+</section>
+<section class="block">
+  <h2>Два разных сообщения — не путайте</h2>
+  <ul><li>«Не удаётся проверить разработчика» — обычный случай: программа подписана, но не заверена Apple. Проходится кнопкой выше.</li><li>«Приложение повреждено и должно быть перемещено в Корзину» — другое: подписи нет вовсе, а браузер повесил на файл метку карантина. Кнопки обхода в этом случае система не показывает.</li></ul>
+</section>
+<section class="block">
+  <h2>Что делать со вторым случаем</h2>
+  <p>Скачайте свежую версию с нашего адреса: с августа 2026 сборки для macOS подписываются нашим собственным ключом, и это сообщение больше не появляется.</p>
+  <p>У Мака две сборки — для процессоров Apple и для Intel. Браузер не сообщает, какой у вас, поэтому кнопки на странице разные; если приложение не запускается, первым делом проверьте, ту ли сборку скачали.</p>
+</section>
+<section class="block">
+  <h2>Почему приложения нет в App Store</h2>
+  <p>Публиковать в магазине может только компания, а не частный человек. Поэтому файл раздаётся напрямую, а обновления приложение находит само и ставит только подписанное нашим ключом.</p>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Что такое sing-box и почему приложение построено на нём</title>
+<meta name="description" content="Ядро sing-box: что оно делает внутри клиента, чем отличается от предшественников, как устроен конфиг и почему ядро лежит внутри приложения, а не скачивается.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/sing-box/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/sing-box/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/sing-box/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/sing-box/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Что такое sing-box и почему приложение построено на нём">
+<meta property="og:description" content="Ядро sing-box: что оно делает внутри клиента, чем отличается от предшественников, как устроен конфиг и почему ядро лежит внутри приложения, а не скачивается.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/sing-box/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Что такое sing-box и почему приложение построено на нём", "description": "Ядро sing-box: что оно делает внутри клиента, чем отличается от предшественников, как устроен конфиг и почему ядро лежит внутри приложения, а не скачивается.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/sing-box/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "Что такое sing-box и почему приложение построено на нём", "item": "https://shtil.ndvsdom54.ru/guides/sing-box/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>Что такое sing-box и почему приложение построено на нём</h1>
+    <p class="lead">sing-box — открытое ядро, которое выполняет всю работу с соединением: держит туннель, разбирает правила маршрута, решает, какой запрос куда отправить. Приложение вокруг него — это экран, кнопки и связь с ботом.</p>
+<section class="block">
+  <h2>Что оно умеет</h2>
+  <ul><li>Говорить на разных протоколах одним ядром — VLESS, Trojan, Shadowsocks и другие, без отдельной программы под каждый.</li><li>Разделять маршрут по правилам: домен, адрес, страна, конкретное приложение на устройстве.</li><li>Поднимать системный туннель, через который идёт трафик всех программ, а не только браузера.</li><li>Отвечать на запросы имён самостоятельно — это важно, потому что через обычный запрос имени утекает половина приватности.</li></ul>
+</section>
+<section class="block">
+  <h2>Почему ядро лежит внутри приложения</h2>
+  <p>Многие клиенты качают ядро и списки маршрутов при первом запуске. Это удобно ровно до того дня, когда адрес, откуда они качаются, не отвечает: приложение оказывается пустым и не включается.</p>
+  <p>У нас ядро и списки собраны внутрь. Интернет нужен только для самого соединения — поставили и работает, даже если посторонние адреса недоступны.</p>
+</section>
+<section class="block">
+  <h2>Как выглядит настройка</h2>
+  <p>Конфигурация sing-box — обычный текстовый файл в формате JSON: где входы, где выходы, какие правила маршрута. Подписка отдаёт готовый файл, и приложение правит в нём только локальные порты.</p>
+  <p>Это же свойство делает подписку переносимой: тот же адрес открывается в любом клиенте на том же ядре — на компьютере, на телефоне, на приставке.</p>
+</section>
+<section class="block">
+  <h2>Лицензия и исходники</h2>
+  <p>sing-box распространяется под лицензией GPL-3.0, исходники открыты. Наше приложение для компьютера тоже открыто, ссылки на оба репозитория стоят в подвале главной страницы.</p>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>
