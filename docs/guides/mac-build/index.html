@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Какую сборку выбрать для Мака: Apple silicon или Intel</title>
+<meta name="description" content="Как за десять секунд узнать процессор своего Мака, чем отличаются два файла и почему через Homebrew выбирать не приходится.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/mac-build/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/mac-build/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Какую сборку выбрать для Мака: Apple silicon или Intel">
+<meta property="og:description" content="Как за десять секунд узнать процессор своего Мака, чем отличаются два файла и почему через Homebrew выбирать не приходится.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/mac-build/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Какую сборку выбрать для Мака: Apple silicon или Intel", "description": "Как за десять секунд узнать процессор своего Мака, чем отличаются два файла и почему через Homebrew выбирать не приходится.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/mac-build/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "Какую сборку выбрать для Мака: Apple silicon или Intel", "item": "https://shtil.ndvsdom54.ru/guides/mac-build/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>Какую сборку выбрать для Мака: Apple silicon или Intel</h1>
+    <p class="lead">Для macOS мы выкладываем два файла. Отличаются они процессором, под который собраны, и перепутать их неприятно, но не страшно.</p>
+<section class="block">
+  <h2>Как узнать свой процессор</h2>
+  <ol><li>Меню Apple в левом верхнем углу → «Об этом Mac».</li><li>Смотрим строку «Чип» или «Процессор». Написано «Apple M…» — это Apple silicon. Написано «Intel Core…» — это Intel.</li><li>Скачиваем файл с соответствующей пометкой.</li></ol>
+</section>
+<section class="block">
+  <h2>Что будет, если перепутать</h2>
+  <ul><li>Сборка для Intel на Apple silicon запустится через встроенный слой совместимости — медленнее и заметно прожорливее по батарее.</li><li>Сборка для Apple silicon на Intel не запустится вовсе: система скажет, что приложение не поддерживается.</li><li>Ошибка обратима: удалите приложение и поставьте нужный файл, настройки и ключ сохранятся.</li></ul>
+</section>
+<section class="block">
+  <h2>Когда выбирать не надо</h2>
+  <p>При установке через Homebrew процессор определяется сам, и ставится нужная сборка. Обновление тоже приходит правильное.</p>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

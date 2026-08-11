@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speed dropped: what to check before writing to support</title>
+<meta name="description" content="A short order of checks: compare against a direct connection, read the log and the connection list on the diagnostics screen, restart the core, check which mode is on.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/en/guides/speed-drop/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/speed-drop/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/speed-drop/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/speed-drop/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Speed dropped: what to check before writing to support">
+<meta property="og:description" content="A short order of checks: compare against a direct connection, read the log and the connection list on the diagnostics screen, restart the core, check which mode is on.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/en/guides/speed-drop/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="stylesheet" href="../../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Speed dropped: what to check before writing to support", "description": "A short order of checks: compare against a direct connection, read the log and the connection list on the diagnostics screen, restart the core, check which mode is on.", "inLanguage": "en", "url": "https://shtil.ndvsdom54.ru/en/guides/speed-drop/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shtil.ndvsdom54.ru/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "Speed dropped: what to check before writing to support", "item": "https://shtil.ndvsdom54.ru/en/guides/speed-drop/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/en/">
+    <img src="../../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Guides">
+    <a href="https://shtil.ndvsdom54.ru/guides/" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" class="on" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/en/guides/">Guides</a></p>
+    <h1>Speed dropped: what to check before writing to support</h1>
+    <p class="lead">&quot;It got slow&quot; comes from different places — a busy link, a saturated network, or a mode sending more traffic through the tunnel than needed. Check in this order.</p>
+<section class="block">
+  <h2>Separate the tunnel from the network</h2>
+  <ol><li>Measure the speed with the app off. If it is low as well, the network or the plan is the answer and the tunnel is not involved.</li><li>Try local sites: they go direct, outside the tunnel. Slow there too — again the network.</li><li>If only foreign sites crawl while local ones fly, keep going down this list.</li></ol>
+</section>
+<section class="block">
+  <h2>Open diagnostics</h2>
+  <p>The desktop app has a Diagnostics screen with the working log and the list of current connections. That list shows what actually goes through the tunnel — now and then the culprit turns out to be one program pulling an update.</p>
+</section>
+<section class="block">
+  <h2>Restart the core</h2>
+  <p>Connections are long-lived, and after a network change — home Wi-Fi to mobile data, say — an old session sometimes hangs around. The restart button on the main screen brings the core back up, which is faster than rebooting the machine.</p>
+</section>
+<section class="block">
+  <h2>Check the mode</h2>
+  <ul><li>System proxy — only software that reads system settings goes through the tunnel.</li><li>Tunnel — everything goes through it. It is the heavier mode, and on older hardware the difference shows.</li><li>If none of that helps, write to support and attach the app log — it shows where things break.</li></ul>
+</section>
+    <p class="updated">Checked: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/en/guides/">All guides</a> · <a href="https://shtil.ndvsdom54.ru/en/">Home</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

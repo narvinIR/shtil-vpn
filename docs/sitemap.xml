@@ -130,4 +130,84 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/macos-warning/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/macos-warning/"/>
   </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/vpn-permission/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/vpn-permission/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/vpn-permission/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/vpn-permission/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/vpn-permission/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/vpn-permission/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/key-vs-subscription/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/key-vs-subscription/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/key-vs-subscription/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/key-vs-subscription/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/key-vs-subscription/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/key-vs-subscription/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/app-size/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/app-size/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/app-size/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/app-size/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/app-size/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/app-size/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/speed-drop/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/speed-drop/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/speed-drop/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/speed-drop/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/speed-drop/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/speed-drop/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/mac-build/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/mac-build/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/mac-build/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/mac-build/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/vs-other-clients/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/vs-other-clients/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/vs-other-clients/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/vs-other-clients/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/vs-other-clients/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/vs-other-clients/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/app-logs/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/app-logs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/app-logs/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/app-logs/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/app-logs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/app-logs/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/guides/uninstall/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/uninstall/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/uninstall/"/>
+  </url>
+  <url>
+    <loc>https://shtil.ndvsdom54.ru/en/guides/uninstall/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/uninstall/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/uninstall/"/>
+  </url>
 </urlset>

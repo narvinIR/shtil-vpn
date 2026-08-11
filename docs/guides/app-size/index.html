@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Почему приложение весит столько, сколько весит</title>
+<meta name="description" content="Из чего складывается размер: ядро внутри пакета, встроенные списки маршрутов и отдельные сборки под процессор вместо одной универсальной.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/guides/app-size/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/app-size/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/app-size/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/app-size/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Почему приложение весит столько, сколько весит">
+<meta property="og:description" content="Из чего складывается размер: ядро внутри пакета, встроенные списки маршрутов и отдельные сборки под процессор вместо одной универсальной.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/guides/app-size/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="ru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Почему приложение весит столько, сколько весит", "description": "Из чего складывается размер: ядро внутри пакета, встроенные списки маршрутов и отдельные сборки под процессор вместо одной универсальной.", "inLanguage": "ru", "url": "https://shtil.ndvsdom54.ru/guides/app-size/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/"}, {"@type": "ListItem", "position": 2, "name": "Справочник", "item": "https://shtil.ndvsdom54.ru/guides/"}, {"@type": "ListItem", "position": 3, "name": "Почему приложение весит столько, сколько весит", "item": "https://shtil.ndvsdom54.ru/guides/app-size/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/">
+    <img src="../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Справочник">
+    <a href="https://shtil.ndvsdom54.ru/guides/" class="on" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/guides/">Справочник</a></p>
+    <h1>Почему приложение весит столько, сколько весит</h1>
+    <p class="lead">Установщик для Windows — 18 МБ, приложение для телефона — 26 МБ, а универсальная сборка сразу 72 МБ. Разберём, из чего это набирается.</p>
+<section class="block">
+  <h2>Основной вес — ядро</h2>
+  <p>Само окно приложения весит немного. Основную часть занимает ядро sing-box — программа, которая и держит соединение. На компьютере это отдельный файл примерно на 45 МБ, он лежит внутри пакета и разворачивается при установке.</p>
+  <p>Ядро внутри — сознательный выбор: приложение работает сразу после установки и ничего не докачивает при первом запуске. Вариант «скачаем ядро потом» короче на диске ровно до того момента, когда докачивать его будет неоткуда.</p>
+</section>
+<section class="block">
+  <h2>Списки маршрутов тоже внутри</h2>
+  <p>Разделение трафика опирается на списки адресов: что идёт напрямую, а что через туннель. Многие клиенты подтягивают такие списки из сети при старте. У нас они собраны внутрь приложения — недоступный адрес списка не должен мешать соединению.</p>
+</section>
+<section class="block">
+  <h2>Почему у Android несколько файлов</h2>
+  <ul><li>Сборка под свой процессор — 26–28 МБ. Для большинства телефонов это arm64.</li><li>Универсальная — 72 МБ: в ней лежат сразу все варианты ядра. Она нужна, когда неизвестно, какой процессор в устройстве, и удобна для телевизоров и приставок.</li><li>Из магазина приложений такой разницы обычно не видно: магазин отдаёт устройству только нужную часть, а мы раздаём файлы напрямую и потому показываем их все.</li></ul>
+</section>
+    <p class="updated">Проверено: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/guides/">Весь справочник</a> · <a href="https://shtil.ndvsdom54.ru/">На главную</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

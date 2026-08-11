@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which macOS build to take: Apple silicon or Intel</title>
+<meta name="description" content="How to check your Mac's processor in ten seconds, what separates the two files, and why Homebrew removes the choice entirely.">
+<link rel="canonical" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+  <link rel="alternate" hreflang="ru" href="https://shtil.ndvsdom54.ru/guides/mac-build/">
+  <link rel="alternate" hreflang="en" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+  <link rel="alternate" hreflang="x-default" href="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Which macOS build to take: Apple silicon or Intel">
+<meta property="og:description" content="How to check your Mac's processor in ten seconds, what separates the two files, and why Homebrew removes the choice entirely.">
+<meta property="og:url" content="https://shtil.ndvsdom54.ru/en/guides/mac-build/">
+<meta property="og:image" content="https://shtil.ndvsdom54.ru/assets/og.png">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090e1a">
+<link rel="icon" href="../../../assets/shtil-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="stylesheet" href="../../../assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Which macOS build to take: Apple silicon or Intel", "description": "How to check your Mac's processor in ten seconds, what separates the two files, and why Homebrew removes the choice entirely.", "inLanguage": "en", "url": "https://shtil.ndvsdom54.ru/en/guides/mac-build/", "dateModified": "2026-08-11", "author": {"@type": "Organization", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}, "isPartOf": {"@type": "WebSite", "name": "Shtil VPN", "url": "https://shtil.ndvsdom54.ru"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Shtil VPN", "item": "https://shtil.ndvsdom54.ru/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://shtil.ndvsdom54.ru/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "Which macOS build to take: Apple silicon or Intel", "item": "https://shtil.ndvsdom54.ru/en/guides/mac-build/"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="https://shtil.ndvsdom54.ru/en/">
+    <img src="../../../assets/shtil-mark.svg" alt="" width="34" height="34">
+    <b>Shtil VPN</b>
+  </a>
+  <nav class="langs" aria-label="Guides">
+    <a href="https://shtil.ndvsdom54.ru/guides/" hreflang="ru">Русский</a>
+    <a href="https://shtil.ndvsdom54.ru/en/guides/" class="on" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap guide">
+  <article>
+    <p class="crumbs"><a href="https://shtil.ndvsdom54.ru/en/guides/">Guides</a></p>
+    <h1>Which macOS build to take: Apple silicon or Intel</h1>
+    <p class="lead">We publish two files for macOS. They differ by the processor they are built for, and mixing them up is annoying rather than dangerous.</p>
+<section class="block">
+  <h2>Finding your processor</h2>
+  <ol><li>Apple menu in the top left corner → &quot;About This Mac&quot;.</li><li>Read the &quot;Chip&quot; or &quot;Processor&quot; line. &quot;Apple M…&quot; means Apple silicon. &quot;Intel Core…&quot; means Intel.</li><li>Download the file marked accordingly.</li></ol>
+</section>
+<section class="block">
+  <h2>If you take the wrong one</h2>
+  <ul><li>The Intel build on Apple silicon runs through the built-in compatibility layer — slower and noticeably heavier on battery.</li><li>The Apple silicon build on Intel will not start at all: the system reports the app as unsupported.</li><li>Either way it is reversible: remove the app, install the right file, and your settings and key are still there.</li></ul>
+</section>
+<section class="block">
+  <h2>When there is nothing to choose</h2>
+  <p>Installed through Homebrew, the processor is detected for you and the right build is fetched — updates included.</p>
+</section>
+    <p class="updated">Checked: 2026-08-11</p>
+  </article>
+</main>
+
+<footer class="wrap">
+  <p><a href="https://shtil.ndvsdom54.ru/en/guides/">All guides</a> · <a href="https://shtil.ndvsdom54.ru/en/">Home</a> · <a href="https://t.me/RealityVPNBot_bot">@RealityVPNBot_bot</a></p>
+</footer>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

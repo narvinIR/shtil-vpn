@@ -317,6 +317,267 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "vpn-permission",
+      "title": "Why the app asks for VPN permission, and what it grants",
+      "description": "The system connection request: why it cannot be skipped, how a tunnel differs from a system proxy, and why the desktop app sometimes asks for administrator rights.",
+      "lead": "The first time you connect, the system asks for permission — a dialog on the phone, an admin prompt on the desktop. Here is what you are actually granting.",
+      "blocks": [
+        {
+          "h2": "Phone and TV",
+          "p": [
+            "Android lets no app touch another app's traffic on its own. To route it through a tunnel, an app has to register with the system as a VPN — and the system shows a \"Connection request\" dialog naming the app.",
+            "You are asked once. While the permission holds, a key icon stays in the status bar — that is the system reminding you a tunnel is up. You can revoke it in Android settings, in the VPN section."
+          ]
+        },
+        {
+          "h2": "Desktop: two different routes",
+          "list": [
+            "System proxy — the app opens a local endpoint and writes it into Windows or macOS settings. Everything that reads system settings goes through it: browsers, stores, most apps. No administrator rights needed.",
+            "Tunnel — traffic goes through a network interface the app creates, so everything goes through it, including software that knows nothing about proxies. Creating that interface is a system-level operation, which is why administrator rights are asked once."
+          ]
+        },
+        {
+          "h2": "What the permission does not do",
+          "p": [
+            "VPN permission covers network packets and nothing else. Files, contacts, camera, microphone and other apps' contents stay closed — the system has separate permissions for those, and the app does not request them.",
+            "On Android the app also asks for notification permission. That is for exactly one thing: the stop button in the notification shade, so you can drop the tunnel without opening the app."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "key-vs-subscription",
+      "title": "Key or subscription link: what to move to a new device",
+      "description": "How a vless:// string differs from a subscription link, why a new phone is better set up with the subscription, and how many devices work at once.",
+      "lead": "The bot hands you two things: a subscription link and a key as a plain string. They look different because they do different jobs — and on a new device you notice immediately.",
+      "blocks": [
+        {
+          "h2": "The short version",
+          "list": [
+            "Subscription link — an address the app fetches a ready configuration from: server, encryption and routing rules in one go.",
+            "Key — a single string holding the server address and connection parameters. It carries no routing rules."
+          ]
+        },
+        {
+          "h2": "Why a new device is better set up with the subscription",
+          "p": [
+            "A subscription refreshes: the app re-reads it and picks up current settings. If the server moves or the rules change, you re-enter nothing.",
+            "A key is a snapshot taken at the moment it was issued. It keeps working while the address holds, but routing has to be set up in the client by hand. That is the usual reason people report local sites and banks going through the tunnel."
+          ]
+        },
+        {
+          "h2": "Moving it over",
+          "steps": [
+            "Open the bot and take the subscription link — it is the same one for all of your devices.",
+            "In our app you do not have to type it: the bot shows a pairing code and a QR, and the app reads it and configures itself.",
+            "The plain key sits next to it under its own button — you need it for third-party clients that do not understand subscriptions."
+          ]
+        },
+        {
+          "h2": "How many devices at once",
+          "p": [
+            "Two simultaneous connections per account. That is not a limit on how many devices you may install the app on, but on how many are connected at the same moment: a phone and a desktop work together, a third connection starts pushing the others off."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "app-size",
+      "title": "Why the app is the size it is",
+      "description": "What makes up the download: the core shipped inside the package, routing lists compiled in, and per-processor builds instead of one universal file.",
+      "lead": "The Windows installer is 18 MB, the phone build is 26 MB, and the universal Android file is 72 MB. Here is where that comes from.",
+      "blocks": [
+        {
+          "h2": "Most of it is the core",
+          "p": [
+            "The app window itself is small. The bulk is the sing-box core — the program that actually holds the connection. On desktop that is a separate file of roughly 45 MB, shipped inside the package and unpacked on install.",
+            "Shipping the core inside is a deliberate choice: the app works right after installation and downloads nothing on first run. \"Fetch the core later\" is smaller on disk right up until the moment there is nowhere to fetch it from."
+          ]
+        },
+        {
+          "h2": "Routing lists are inside too",
+          "p": [
+            "Split routing relies on address lists: what goes direct and what goes through the tunnel. Many clients pull those lists from the network at startup. Ours are compiled into the app — an unreachable list should never stand between you and a working connection."
+          ]
+        },
+        {
+          "h2": "Why Android has several files",
+          "list": [
+            "A build for your own processor — 26–28 MB. For most phones that is arm64.",
+            "The universal build — 72 MB: it carries every core variant at once. It helps when the processor is unknown, which is common for TV boxes and set-top devices.",
+            "App stores usually hide this difference by shipping only the part your device needs. We hand out files directly, so we show them all."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "speed-drop",
+      "title": "Speed dropped: what to check before writing to support",
+      "description": "A short order of checks: compare against a direct connection, read the log and the connection list on the diagnostics screen, restart the core, check which mode is on.",
+      "lead": "\"It got slow\" comes from different places — a busy link, a saturated network, or a mode sending more traffic through the tunnel than needed. Check in this order.",
+      "blocks": [
+        {
+          "h2": "Separate the tunnel from the network",
+          "steps": [
+            "Measure the speed with the app off. If it is low as well, the network or the plan is the answer and the tunnel is not involved.",
+            "Try local sites: they go direct, outside the tunnel. Slow there too — again the network.",
+            "If only foreign sites crawl while local ones fly, keep going down this list."
+          ]
+        },
+        {
+          "h2": "Open diagnostics",
+          "p": [
+            "The desktop app has a Diagnostics screen with the working log and the list of current connections. That list shows what actually goes through the tunnel — now and then the culprit turns out to be one program pulling an update."
+          ]
+        },
+        {
+          "h2": "Restart the core",
+          "p": [
+            "Connections are long-lived, and after a network change — home Wi-Fi to mobile data, say — an old session sometimes hangs around. The restart button on the main screen brings the core back up, which is faster than rebooting the machine."
+          ]
+        },
+        {
+          "h2": "Check the mode",
+          "list": [
+            "System proxy — only software that reads system settings goes through the tunnel.",
+            "Tunnel — everything goes through it. It is the heavier mode, and on older hardware the difference shows.",
+            "If none of that helps, write to support and attach the app log — it shows where things break."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mac-build",
+      "title": "Which macOS build to take: Apple silicon or Intel",
+      "description": "How to check your Mac's processor in ten seconds, what separates the two files, and why Homebrew removes the choice entirely.",
+      "lead": "We publish two files for macOS. They differ by the processor they are built for, and mixing them up is annoying rather than dangerous.",
+      "blocks": [
+        {
+          "h2": "Finding your processor",
+          "steps": [
+            "Apple menu in the top left corner → \"About This Mac\".",
+            "Read the \"Chip\" or \"Processor\" line. \"Apple M…\" means Apple silicon. \"Intel Core…\" means Intel.",
+            "Download the file marked accordingly."
+          ]
+        },
+        {
+          "h2": "If you take the wrong one",
+          "list": [
+            "The Intel build on Apple silicon runs through the built-in compatibility layer — slower and noticeably heavier on battery.",
+            "The Apple silicon build on Intel will not start at all: the system reports the app as unsupported.",
+            "Either way it is reversible: remove the app, install the right file, and your settings and key are still there."
+          ]
+        },
+        {
+          "h2": "When there is nothing to choose",
+          "p": [
+            "Installed through Homebrew, the processor is detected for you and the right build is fetched — updates included."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "vs-other-clients",
+      "title": "How this app differs from Hiddify and Throne",
+      "description": "Factual differences between a universal client and a single-service app: where the configuration comes from, what happens without an account, where updates arrive from.",
+      "lead": "Hiddify and Throne are universal clients: you paste any service's subscription into them. Our app is built around one service. Every difference follows from that.",
+      "blocks": [
+        {
+          "h2": "Where the configuration comes from",
+          "list": [
+            "In a universal client you paste a link or a key, and set up routing yourself if you want it.",
+            "Here the configuration arrives ready-made: server, encryption and split-routing rules are already assembled, and a pairing code from the bot is all the input there is."
+          ]
+        },
+        {
+          "h2": "Before paying, and without an account",
+          "p": [
+            "Our app has guest access: two hours of use with no Telegram and no sign-up, so you can see how it behaves on your own network. A universal client with no third-party subscription does nothing — it has nothing to connect to."
+          ]
+        },
+        {
+          "h2": "Updates and languages",
+          "list": [
+            "The app checks for new versions itself and installs only builds signed with our key.",
+            "The interface is translated into five languages — the same set the bot speaks.",
+            "Routing lists are compiled into the app rather than fetched at startup."
+          ]
+        },
+        {
+          "h2": "What is shared",
+          "p": [
+            "All three run the same core underneath: sing-box. That is why our subscription link works in the other clients too — if Hiddify or Throne is what you are used to, installing our app is optional."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "app-logs",
+      "title": "What goes into the app log, and what does not",
+      "description": "Where the log lives, what gets written, how long it is kept, and why no usage statistics leave the app.",
+      "lead": "The app keeps a working log — it is what makes breakage explainable. Here is what is in it and who gets to see it.",
+      "blocks": [
+        {
+          "h2": "What is written",
+          "list": [
+            "Working events: core start and stop, settings applied, connectivity checks, errors with their text.",
+            "The app's own network calls — a reachability check, a request for the current version.",
+            "The core's log, in a separate file: it shows the addresses the core handles. That is effectively a list of the sites and services your device reached, so keep it in mind before sending the log to anyone."
+          ]
+        },
+        {
+          "h2": "Where it lives and how long",
+          "p": [
+            "The log stays on the device, in the app's own folder, one file per day. Old files are cleaned up by the app so nothing piles up.",
+            "You can read it without leaving the app, on the Diagnostics screen."
+          ]
+        },
+        {
+          "h2": "Where it does not go",
+          "p": [
+            "Nowhere. The app carries no analytics, no usage counters and no crash-reporting service — the log stays on your device until you decide to send it.",
+            "If you do write to support about a fault, the log shortens the work considerably: it shows the exact step where things stop."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "uninstall",
+      "title": "Removing the app completely",
+      "description": "The full removal order on Windows, macOS and Android, where settings are left behind, and what happens to the subscription afterwards.",
+      "lead": "A normal uninstall takes the app away but leaves settings in place. If you want everything gone, here is the full order.",
+      "blocks": [
+        {
+          "h2": "Windows",
+          "steps": [
+            "Turn the tunnel off in the app and close it, otherwise some files stay locked.",
+            "Settings → Apps → \"ShtilVPN\" → \"Uninstall\".",
+            "Two settings folders remain. Open Explorer, paste %LOCALAPPDATA%\\ShtilVPN into the address bar and delete the folder, then do the same with %APPDATA%\\app.realityvpn.desktop.",
+            "If the app came from Scoop, one command covers all of it: scoop uninstall -p shtil-vpn."
+          ]
+        },
+        {
+          "h2": "macOS",
+          "p": [
+            "Through Homebrew a single command does everything: brew uninstall --zap --cask shtil-vpn — it removes the app together with its settings.",
+            "Installed from the disk image, drag the app to the Trash, then delete ~/Library/Application Support/ShtilVPN and the app's files in ~/Library/Caches and ~/Library/Preferences."
+          ]
+        },
+        {
+          "h2": "Android",
+          "p": [
+            "A normal uninstall, same as any app: long-press the icon → \"Uninstall\". Settings go with it, and the system drops the VPN permission by itself."
+          ]
+        },
+        {
+          "h2": "What happens to your access",
+          "p": [
+            "Removing the app neither cancels the subscription nor deletes your key — it stays with the bot. Install the app again, or open the key in another client, and everything keeps working until the paid period ends."
+          ]
+        }
+      ]
     }
   ]
 }
