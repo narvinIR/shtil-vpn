@@ -487,7 +487,7 @@ def build():
         src = SRC / name if (SRC / name).exists() else SRC / "assets" / name
         shutil.copy(src, OUT / "assets" / name)
     shutil.copytree(SRC / "assets" / "shots", OUT / "assets" / "shots")
-    for extra in ("og.png", "icon-180.png"):
+    for extra in ("og.png", "icon-180.png", "icon-32.png"):
         shutil.copy(SRC / "assets" / extra, OUT / "assets" / extra)
 
     for lang in LANGS:
