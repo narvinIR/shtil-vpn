@@ -173,7 +173,7 @@ payment live in the Telegram bot.
 | App | System | Source | Licence |
 |---|---|---|---|
 | Shtil (Android) | Android 6.0+, phones and TV boxes | fork of [vpn4tv-native](https://github.com/VPN4TV/vpn4tv-native) | GPL-3.0 |
-| Shtil for desktop | Windows 10/11, macOS 12+ | [shtil-vpn-desktop](https://github.com/narvinIR/shtil-vpn-desktop) | MIT |
+| Shtil for desktop | Windows 10/11, macOS 12+ | source closed, builds on the [downloads page](https://github.com/narvinIR/shtil-vpn/releases/tag/apps) | MIT |
 | Core | inside both apps | [sing-box](https://github.com/SagerNet/sing-box) | GPL-3.0 |
 
 This repository is the storefront: descriptions and permanent links to the files. Each file is
