@@ -179,7 +179,7 @@
 | Приложение | Система | Исходники | Лицензия |
 |---|---|---|---|
 | Штиль (Android) | Android 6.0 и новее, телефоны и телевизоры | форк [vpn4tv-native](https://github.com/VPN4TV/vpn4tv-native) | GPL-3.0 |
-| Штиль для компьютера | Windows 10/11, macOS 12 и новее | [shtil-vpn-desktop](https://github.com/narvinIR/shtil-vpn-desktop) | MIT |
+| Штиль для компьютера | Windows 10/11, macOS 12 и новее | код закрыт, готовые файлы на [витрине](https://github.com/narvinIR/shtil-vpn/releases/tag/apps) | MIT |
 | Ядро | внутри обоих приложений | [sing-box](https://github.com/SagerNet/sing-box) | GPL-3.0 |
 
 Этот репозиторий — витрина: описания и постоянные ссылки на файлы. Каждый файл
