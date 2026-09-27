@@ -6,7 +6,7 @@
 
 [Русский](README.md) · [English](README.en.md) · **Deutsch** · [Español](README.es.md) · [فارسی](README.fa.md)
 
-Produktseite: **[shtil.ndvsdom54.ru](https://shtil.ndvsdom54.ru/de/)**
+Produktseite: **[narvinir.github.io/shtil-vpn](https://narvinir.github.io/shtil-vpn/de/)**
 
 **VPN-Apps auf Basis des [sing-box](https://github.com/SagerNet/sing-box)-Kerns (VLESS + Reality)
 für Android-Telefone, Android TV, Windows und macOS.**
@@ -44,8 +44,8 @@ dem direkten Weg und laufen deshalb mit voller Geschwindigkeit weiter.
 
 | Gerät | Datei | Installation |
 |---|---|---|
-| **Android-Telefon oder -Tablet** | [sub.ndvsdom54.ru/get](https://sub.ndvsdom54.ru/get) — die Seite wählt die Datei selbst | Adresse im Browser des Telefons öffnen, „Herunterladen“ antippen |
-| **Android TV** | [sub.ndvsdom54.ru/tv.apk](https://sub.ndvsdom54.ru/tv.apk) — die Datei startet sofort | Adresse mit der Fernbedienung in eine Downloader-App eingeben |
+| **Android-Telefon oder -Tablet** | [shtil.vip/get](https://shtil.vip/get) — die Seite wählt die Datei selbst | Adresse im Browser des Telefons öffnen, „Herunterladen“ antippen |
+| **Android TV** | [shtil.vip/tv.apk](https://shtil.vip/tv.apk) — die Datei startet sofort | Adresse mit der Fernbedienung in eine Downloader-App eingeben |
 | **Windows** | [ShtilVPN-windows.exe](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe) | Herunterladen und starten |
 | **Mac, Apple-Chip** | [ShtilVPN-mac-apple.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg) | In „Programme“ ziehen |
 | **Mac, Intel** (2020 und älter) | [ShtilVPN-mac-intel.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg) | In „Programme“ ziehen |
@@ -139,11 +139,11 @@ verkauft seit 2024 kein sofortiges Vertrauen mehr, es entsteht über die Zahl de
 ## Häufige Fragen
 
 **Braucht es Google Play oder den App Store?**
-Nein. Die Datei kommt von hier oder von der [Installationsseite](https://sub.ndvsdom54.ru/get),
+Nein. Die Datei kommt von hier oder von der [Installationsseite](https://shtil.vip/get),
 neue Versionen findet die App selbst.
 
 **Wie installiere ich auf einem Fernseher ohne Browser?**
-Über eine Downloader-App: `sub.ndvsdom54.ru/tv.apk` mit der Fernbedienung eingeben, die Datei
+Über eine Downloader-App: `shtil.vip/tv.apk` mit der Fernbedienung eingeben, die Datei
 startet sofort. Die Adresse ist absichtlich kurz und ohne „https://“.
 
 **Warum brechen Bank- und Behördenseiten unter anderen VPNs ab?**

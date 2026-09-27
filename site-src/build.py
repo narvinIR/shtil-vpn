@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "site-src"
 OUT = ROOT / "docs"
 
-SITE = "https://shtil.ndvsdom54.ru"
+SITE = "https://narvinir.github.io/shtil-vpn"
 REPO = "https://github.com/narvinIR/shtil-vpn"
 DL = REPO + "/releases/download/apps"
 BOT = "https://t.me/RealityVPNBot_bot"
@@ -107,7 +107,7 @@ def head(lang, d):
         "operatingSystem": "Android 6.0+, Android TV, Windows 10/11, macOS 12+",
         "url": url_for(lang),
         "downloadUrl": FILES["android"],
-        "installUrl": "https://sub.ndvsdom54.ru/get",
+        "installUrl": "https://shtil.vip/get",
         "softwareHelp": BOT,
         "inLanguage": ["ru", "en", "de", "es", "fa"],
         "description": d["meta"]["description"],
@@ -514,7 +514,7 @@ def build():
                 guide_pages.append(art["slug"])
         print(f"{lang}: справочник — {len(data['articles'])} статей → {base.relative_to(ROOT)}")
 
-    (OUT / "CNAME").write_text("shtil.ndvsdom54.ru\n", encoding="utf-8")
+    # Своего имени у страницы нет с 27.09.2026 (переезд с ndvsdom54): адрес github.io, CNAME не пишем.
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     (OUT / "robots.txt").write_text(

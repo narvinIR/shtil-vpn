@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shtil.ndvsdom54.ru/sitemap.xml
+Sitemap: https://narvinir.github.io/shtil-vpn/sitemap.xml

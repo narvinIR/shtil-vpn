@@ -39,7 +39,7 @@
           "h2": "With an Android phone nearby: nothing typed on the remote",
           "p": [
             "Install the free «Send files to TV» app on the phone, and on the TV from the very same place: in Google Play on the phone press the arrow next to «Install» and tick your TV. The remote stays on the table.",
-            "Download our file to the phone from sub.ndvsdom54.ru/get, open «Send files to TV», pick the file and tap the name of your TV. On the TV only arrows and «OK» are left.",
+            "Download our file to the phone from shtil.vip/get, open «Send files to TV», pick the file and tap the name of your TV. On the TV only arrows and «OK» are left.",
             "The phone and the TV must sit on the same home network. A guest network with device isolation breaks this route — fall back to the code then."
           ]
         },
@@ -53,7 +53,7 @@
         {
           "h2": "If the downloader rejects the address",
           "p": [
-            "If the code does not go through, type the full address: sub.ndvsdom54.ru/tv.apk — it leads to the same file and depends on nothing.",
+            "If the code does not go through, type the full address: shtil.vip/tv.apk — it leads to the same file and depends on nothing.",
             "Downloader dislikes addresses that start with «https://» — type the string exactly as shown, starting at «sub».",
             "Some firmwares block installs from a downloader app until «unknown source» is allowed for that very app in the security settings. The permission is granted once and stays."
           ]
@@ -76,7 +76,7 @@
         {
           "h2": "What you paste",
           "p": [
-            "The bot has a «My VPN» button that hands you a subscription link — a single line starting with https://sub.ndvsdom54.ru/sub/… That is what goes into the client.",
+            "The bot has a «My VPN» button that hands you a subscription link — a single line starting with https://shtil.vip/sub/… That is what goes into the client.",
             "A subscription link beats a bare key: when server settings change, the app pulls the new ones itself and nothing has to be re-shared."
           ]
         },

@@ -6,7 +6,7 @@
 
 [Русский](README.md) · [English](README.en.md) · [Deutsch](README.de.md) · [Español](README.es.md) · **فارسی**
 
-صفحهٔ محصول: **[shtil.ndvsdom54.ru](https://shtil.ndvsdom54.ru/fa/)**
+صفحهٔ محصول: **[narvinir.github.io/shtil-vpn](https://narvinir.github.io/shtil-vpn/fa/)**
 
 </div>
 
@@ -39,8 +39,8 @@ VLESS + Reality برای گوشی اندروید، اندروید تی‌وی، 
 
 | دستگاه | فایل | نصب |
 |---|---|---|
-| **گوشی یا تبلت اندروید** | [sub.ndvsdom54.ru/get](https://sub.ndvsdom54.ru/get) — صفحه خودش فایل را انتخاب می‌کند | آدرس را در مرورگر گوشی باز کنید و «دانلود» را بزنید |
-| **اندروید تی‌وی** | [sub.ndvsdom54.ru/tv.apk](https://sub.ndvsdom54.ru/tv.apk) — فایل بلافاصله شروع می‌شود | آدرس را با ریموت در برنامهٔ دانلودگر (مثلاً Downloader) بنویسید |
+| **گوشی یا تبلت اندروید** | [shtil.vip/get](https://shtil.vip/get) — صفحه خودش فایل را انتخاب می‌کند | آدرس را در مرورگر گوشی باز کنید و «دانلود» را بزنید |
+| **اندروید تی‌وی** | [shtil.vip/tv.apk](https://shtil.vip/tv.apk) — فایل بلافاصله شروع می‌شود | آدرس را با ریموت در برنامهٔ دانلودگر (مثلاً Downloader) بنویسید |
 | **ویندوز** | [ShtilVPN-windows.exe](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe) | دانلود و اجرا کنید |
 | **مک با تراشهٔ اپل** | [ShtilVPN-mac-apple.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg) | به پوشهٔ Applications بکشید |
 | **مک اینتل** (۲۰۲۰ و قدیمی‌تر) | [ShtilVPN-mac-intel.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg) | به پوشهٔ Applications بکشید |
@@ -133,11 +133,11 @@ VLESS + Reality برای گوشی اندروید، اندروید تی‌وی، 
 ## پرسش‌های پرتکرار
 
 **آیا Google Play یا App Store لازم است؟**
-نه. فایل از همین‌جا یا از [صفحهٔ نصب](https://sub.ndvsdom54.ru/get) دانلود می‌شود و نسخه‌های
+نه. فایل از همین‌جا یا از [صفحهٔ نصب](https://shtil.vip/get) دانلود می‌شود و نسخه‌های
 تازه را خود برنامه پیدا می‌کند.
 
 **روی تلویزیونی که مرورگر ندارد چطور نصب کنم؟**
-با برنامهٔ دانلودگری مثل Downloader: آدرس `sub.ndvsdom54.ru/tv.apk` را با ریموت بنویسید، فایل
+با برنامهٔ دانلودگری مثل Downloader: آدرس `shtil.vip/tv.apk` را با ریموت بنویسید، فایل
 بلافاصله شروع می‌شود. آدرس عمداً کوتاه است و «https://» ندارد.
 
 **آیا کلید سرویس‌دهندهٔ دیگر کار می‌کند؟**

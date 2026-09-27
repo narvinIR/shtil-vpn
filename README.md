@@ -6,7 +6,7 @@
 
 **Русский** · [English](README.en.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [فارسی](README.fa.md)
 
-Сайт продукта: **[shtil.ndvsdom54.ru](https://shtil.ndvsdom54.ru/)**
+Сайт продукта: **[narvinir.github.io/shtil-vpn](https://narvinir.github.io/shtil-vpn/)**
 
 **VPN-приложения на ядре [sing-box](https://github.com/SagerNet/sing-box) (VLESS + Reality)
 для телефона, телевизора Android, Windows и macOS.**
@@ -44,8 +44,8 @@
 
 | Устройство | Файл | Как поставить |
 |---|---|---|
-| **Телефон и планшет Android** | [sub.ndvsdom54.ru/get](https://sub.ndvsdom54.ru/get) — страница сама подберёт файл | Открыть адрес в браузере телефона, нажать «Скачать» |
-| **Телевизор Android TV** | [sub.ndvsdom54.ru/tv.apk](https://sub.ndvsdom54.ru/tv.apk) — файл едет сразу | Набрать адрес в качалке (например Downloader) пультом |
+| **Телефон и планшет Android** | [shtil.vip/get](https://shtil.vip/get) — страница сама подберёт файл | Открыть адрес в браузере телефона, нажать «Скачать» |
+| **Телевизор Android TV** | [shtil.vip/tv.apk](https://shtil.vip/tv.apk) — файл едет сразу | Набрать адрес в качалке (например Downloader) пультом |
 | **Компьютер Windows** | [ShtilVPN-windows.exe](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe) | Скачать и запустить |
 | **Mac с процессором Apple** | [ShtilVPN-mac-apple.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg) | Перетащить в «Программы» |
 | **Mac на Intel** (2020 и старше) | [ShtilVPN-mac-intel.dmg](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-intel.dmg) | Перетащить в «Программы» |
@@ -146,11 +146,11 @@
 ## Частые вопросы
 
 **Нужен ли Google Play или App Store?**
-Нет. Файл скачивается по ссылке отсюда или с [страницы установки](https://sub.ndvsdom54.ru/get),
+Нет. Файл скачивается по ссылке отсюда или с [страницы установки](https://shtil.vip/get),
 новые версии приложение находит само.
 
 **Как поставить на телевизор, если браузера там нет?**
-Через качалку вроде Downloader: набрать пультом `sub.ndvsdom54.ru/tv.apk`, файл
+Через качалку вроде Downloader: набрать пультом `shtil.vip/tv.apk`, файл
 приедет сразу. Адрес специально короткий и без «https://».
 
 **Почему банк или госуслуги не хотят работать через VPN?**

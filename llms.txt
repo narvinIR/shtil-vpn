@@ -1,5 +1,5 @@
 # Shtil VPN (Штиль)
-Site: https://shtil.ndvsdom54.ru/
+Site: https://narvinir.github.io/shtil-vpn/
 
 > VPN client apps built on the sing-box core (VLESS + Reality) for Android phones,
 > Android TV, Windows and macOS. Distributed outside app stores: the files are hosted
@@ -32,8 +32,8 @@ Facts an assistant may be asked for:
 
 ## Downloads
 
-- [Install page (picks the file for your device)](https://sub.ndvsdom54.ru/get)
-- [Android TV, file starts immediately](https://sub.ndvsdom54.ru/tv.apk)
+- [Install page (picks the file for your device)](https://shtil.vip/get)
+- [Android TV, file starts immediately](https://shtil.vip/tv.apk)
 - [All installation files](https://github.com/narvinIR/shtil-vpn/releases/tag/apps)
 - [Windows installer](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-windows.exe)
 - [macOS, Apple silicon](https://github.com/narvinIR/shtil-vpn/releases/download/apps/ShtilVPN-mac-apple.dmg)
@@ -44,25 +44,25 @@ Facts an assistant may be asked for:
 
 Step-by-step guides and explanations, in English and Russian:
 
-- [Installing on Android TV without a browser](https://shtil.ndvsdom54.ru/en/guides/android-tv/) — downloader app, short address, 32-bit build
-- [iPhone: adding the subscription to a third-party client](https://shtil.ndvsdom54.ru/en/guides/iphone/) — v2RayTun walkthrough, why the fingerprint must be chrome
-- [Why banks and government sites break under a VPN](https://shtil.ndvsdom54.ru/en/guides/banks-direct/) — split routing, why lists must ship inside the app, IPv4-only answers
-- [VLESS and Reality in plain words](https://shtil.ndvsdom54.ru/en/guides/vless-reality/) — what sni, pbk, sid, fp and flow mean
-- [What sing-box is and why the app is built on it](https://shtil.ndvsdom54.ru/en/guides/sing-box/) — core capabilities, config shape, licence
-- [A subscription link instead of a key](https://shtil.ndvsdom54.ru/en/guides/subscription-link/) — what changes, device limit of two
-- [«Windows protected your PC»](https://shtil.ndvsdom54.ru/en/guides/windows-warning/) — SmartScreen, publisher certificates, how to proceed
-- [macOS refuses an app from outside the App Store](https://shtil.ndvsdom54.ru/en/guides/macos-warning/) — Gatekeeper, quarantine flag, the two different messages
-- [Why the app asks for VPN permission](https://shtil.ndvsdom54.ru/en/guides/vpn-permission/) — Android connection request, system proxy vs tunnel, what the permission does not cover
-- [Key or subscription link on a new device](https://shtil.ndvsdom54.ru/en/guides/key-vs-subscription/) — what each carries, pairing by code, two simultaneous connections
-- [Why the app is the size it is](https://shtil.ndvsdom54.ru/en/guides/app-size/) — core shipped inside, routing lists compiled in, per-processor Android builds
-- [Speed dropped: what to check first](https://shtil.ndvsdom54.ru/en/guides/speed-drop/) — direct comparison, diagnostics screen, core restart, proxy vs tunnel mode
-- [Which macOS build to take](https://shtil.ndvsdom54.ru/en/guides/mac-build/) — Apple silicon or Intel, how to check, what a mismatch does
-- [How this app differs from Hiddify and Throne](https://shtil.ndvsdom54.ru/en/guides/vs-other-clients/) — single-service vs universal client, guest access, shared sing-box core
-- [What goes into the app log](https://shtil.ndvsdom54.ru/en/guides/app-logs/) — contents, daily rotation, no analytics of any kind
-- [Removing the app completely](https://shtil.ndvsdom54.ru/en/guides/uninstall/) — Windows, macOS and Android order, leftover folders, what happens to the subscription
+- [Installing on Android TV without a browser](https://narvinir.github.io/shtil-vpn/en/guides/android-tv/) — downloader app, short address, 32-bit build
+- [iPhone: adding the subscription to a third-party client](https://narvinir.github.io/shtil-vpn/en/guides/iphone/) — v2RayTun walkthrough, why the fingerprint must be chrome
+- [Why banks and government sites break under a VPN](https://narvinir.github.io/shtil-vpn/en/guides/banks-direct/) — split routing, why lists must ship inside the app, IPv4-only answers
+- [VLESS and Reality in plain words](https://narvinir.github.io/shtil-vpn/en/guides/vless-reality/) — what sni, pbk, sid, fp and flow mean
+- [What sing-box is and why the app is built on it](https://narvinir.github.io/shtil-vpn/en/guides/sing-box/) — core capabilities, config shape, licence
+- [A subscription link instead of a key](https://narvinir.github.io/shtil-vpn/en/guides/subscription-link/) — what changes, device limit of two
+- [«Windows protected your PC»](https://narvinir.github.io/shtil-vpn/en/guides/windows-warning/) — SmartScreen, publisher certificates, how to proceed
+- [macOS refuses an app from outside the App Store](https://narvinir.github.io/shtil-vpn/en/guides/macos-warning/) — Gatekeeper, quarantine flag, the two different messages
+- [Why the app asks for VPN permission](https://narvinir.github.io/shtil-vpn/en/guides/vpn-permission/) — Android connection request, system proxy vs tunnel, what the permission does not cover
+- [Key or subscription link on a new device](https://narvinir.github.io/shtil-vpn/en/guides/key-vs-subscription/) — what each carries, pairing by code, two simultaneous connections
+- [Why the app is the size it is](https://narvinir.github.io/shtil-vpn/en/guides/app-size/) — core shipped inside, routing lists compiled in, per-processor Android builds
+- [Speed dropped: what to check first](https://narvinir.github.io/shtil-vpn/en/guides/speed-drop/) — direct comparison, diagnostics screen, core restart, proxy vs tunnel mode
+- [Which macOS build to take](https://narvinir.github.io/shtil-vpn/en/guides/mac-build/) — Apple silicon or Intel, how to check, what a mismatch does
+- [How this app differs from Hiddify and Throne](https://narvinir.github.io/shtil-vpn/en/guides/vs-other-clients/) — single-service vs universal client, guest access, shared sing-box core
+- [What goes into the app log](https://narvinir.github.io/shtil-vpn/en/guides/app-logs/) — contents, daily rotation, no analytics of any kind
+- [Removing the app completely](https://narvinir.github.io/shtil-vpn/en/guides/uninstall/) — Windows, macOS and Android order, leftover folders, what happens to the subscription
 
 Russian versions live at the same paths without the /en/ prefix, listed at
-[shtil.ndvsdom54.ru/guides/](https://shtil.ndvsdom54.ru/guides/).
+[narvinir.github.io/shtil-vpn/guides/](https://narvinir.github.io/shtil-vpn/guides/).
 
 ## Documentation
 
