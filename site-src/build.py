@@ -461,7 +461,7 @@ def render(lang, d):
     </div>
     <div>
       <h3>{esc(d["footer"]["source_title"])}</h3>
-      <p><a href="https://github.com/narvinIR/shtil-vpn-desktop">shtil-vpn-desktop</a> · MIT<br>
+      <p>shtil-vpn-desktop · MIT<br>
       <a href="https://github.com/SagerNet/sing-box">sing-box</a> · GPL-3.0</p>
     </div>
     <div>
